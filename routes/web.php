@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('auth/instagram', 'Auth\AuthController@redirectToInstagram');
+// Route::get('auth/instagram/callback', 'Auth\AuthController@handleInstagramCallback');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 

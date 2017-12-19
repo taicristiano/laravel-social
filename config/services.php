@@ -39,6 +39,13 @@ return [
         'client_secret' => env('GITHUB_SECRET'),
         'redirect' => env('GITHUB_URL'),
     ],
+
+    'facebook' => [
+        'client_id' => env('FACEBOOK_ID'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_URL'),
+    ],
+
     'twitter' => [
         'client_id' => env('TWITTER_ID'),
         'client_secret' => env('TWITTER_SECRET'),
@@ -51,14 +58,33 @@ return [
         'redirect' => env('GOOGLE_URL'),
     ],
 
-    'facebook' => [
-        'client_id' => env('FACEBOOK_ID'),
-        'client_secret' => env('FACEBOOK_SECRET'),
-        'redirect' => env('FACEBOOK_URL'),
+    'line' => [
+        'client_id' => env('LINE_ID'),
+        'client_secret' => env('LINE_SECRET'),
+        'redirect' => env('LINE_URL'),
     ],
+
+    'weibo' => [
+        'client_id' => env('WEIBO_ID'),
+        'client_secret' => env('WEIBO_SECRET'),
+        'redirect' => env('WEIBO_URL'),
+    ],
+    
     'instagram' => [
         'client_id' => env('INSTAGRAM_ID'),
         'client_secret' => env('INSTAGRAM_SECRET'),
         'redirect' => env('INSTAGRAM_URL'),
+    ],
+
+    'talk' => [
+        'client_id' => env('TALK_ID'),
+        'client_secret' => env('TALK_SECRET'),
+        'redirect' => env('TALK_URL'),
+    ],
+
+    'webchat' => [
+        'client_id' => env('WEBCHAT_ID'),
+        'client_secret' => env('WEBCHAT_SECRET'),
+        'redirect' => env('WEBCHAT_URL'),
     ],
 ];

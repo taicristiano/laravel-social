@@ -40,6 +40,10 @@ class AuthController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->user();
+            // Twitter $user->user['lang'] ok
+            // Google $user->user['language'] ok
+            // INSTAGRAM ??? ok
+            dd($user);
         } catch (Exception $e) {
     	    return redirect('auth/' . $provider);
         }

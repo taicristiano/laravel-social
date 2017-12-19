@@ -83,11 +83,14 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://sns.dev/auth/facebook">Facebook ok (?)</a>
+                    <a href="http://sns.dev/auth/twitter">Twitter ok (lang)</a>
+                    <a href="http://sns.dev/auth/google">GOOGLE ok (language)</a>
+                    <a href="http://sns.dev/auth/line">line</a>
+                    <a href="http://sns.dev/auth/weibo">Weibo</a>
+                    <a href="http://sns.dev/auth/instagram">INSTAGRAM ok (?)</a>
+                    <a href="http://sns.dev/auth/kakao">Talk</a>
+                    <a href="http://sns.dev/auth/weixin">WebChat</a>
                 </div>
             </div>
         </div>

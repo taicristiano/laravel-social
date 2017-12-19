@@ -16,6 +16,14 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            // add your listeners (aka providers) here
+            'SocialiteProviders\Instagram\InstagramExtendSocialite@handle',
+            'SocialiteProviders\Kakao\KakaoExtendSocialite@handle',
+            'SocialiteProviders\Line\LineExtendSocialite@handle',
+            'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
+            'SocialiteProviders\Weixin\WeixinExtendSocialite@handle',
+        ],
     ];
 
     /**
