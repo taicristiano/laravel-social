@@ -43,7 +43,6 @@ class AuthController extends Controller
             // Twitter $user->user['lang'] ok
             // Google $user->user['language'] ok
             // INSTAGRAM ??? ok
-            dd($user);
         } catch (Exception $e) {
     	    return redirect('auth/' . $provider);
         }
@@ -52,7 +51,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect('home');
+        return redirect('api/search');
     }
 
     /**

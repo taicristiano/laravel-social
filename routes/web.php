@@ -18,11 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('auth/instagram', 'Auth\AuthController@redirectToInstagram');
-// Route::get('auth/instagram/callback', 'Auth\AuthController@handleInstagramCallback');
+
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-// Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
-// Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
-// http://sns.dev/auth/google/callback
+Route::get('api/search', 'ApiSearchController@index')->name('api');
+Route::post('api/search-handle', 'ApiSearchController@handleSearch')->name('api-search');
