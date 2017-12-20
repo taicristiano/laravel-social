@@ -90,58 +90,28 @@ Search
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="english_speaking_staff"> English speaking staff
+                                            <input type="checkbox" class="minimal" value="1" name="english_speaking_staff">&emsp;English speaking staff
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="english_menu"> English menu
+                                            <input type="checkbox" class="minimal" value="1" name="english_menu">&emsp;English menu
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="korean_speaking_staff"> Korean speaking staff
+                                            <input type="checkbox" class="minimal" value="1" name="korean_speaking_staff">&emsp;Korean speaking staff
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="korean_menu"> Korean menu
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="checkbox text-align">
-                                        <label>
-                                            <input type="checkbox" value="1" name="chinese_speaking_staff"> Chinese speaking staff
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="checkbox text-align">
-                                        <label>
-                                            <input type="checkbox" value="1" name="simplified_chinese_menu"> Simplified chinese menu
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="checkbox text-align">
-                                        <label>
-                                            <input type="checkbox" value="1" name="traditional_chinese_menu"> Traditional chinese menu
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="checkbox text-align">
-                                        <label>
-                                            <input type="checkbox" value="1" name="vegetarian_menu_options"> Vegetarian menu options
+                                            <input type="checkbox" class="minimal" value="1" name="korean_menu">&emsp;Korean menu
                                         </label>
                                     </div>
                                 </div>
@@ -150,28 +120,58 @@ Search
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="religious_menu_options"> Religious menu options
+                                            <input type="checkbox" class="minimal" value="1" name="chinese_speaking_staff">&emsp;Chinese speaking staff
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="wifi"> Wifi
+                                            <input type="checkbox" class="minimal" value="1" name="simplified_chinese_menu">&emsp;Simplified chinese menu
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="card"> Card
+                                            <input type="checkbox" class="minimal" value="1" name="traditional_chinese_menu">&emsp;Traditional chinese menu
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="private_room"> Private room
+                                            <input type="checkbox" class="minimal" value="1" name="vegetarian_menu_options">&emsp;Vegetarian menu options
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row margin-bottom-0">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="checkbox text-align">
+                                        <label>
+                                            <input type="checkbox" class="minimal" value="1" name="religious_menu_options">&emsp;Religious menu options
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="checkbox text-align">
+                                        <label>
+                                            <input type="checkbox" class="minimal" value="1" name="wifi">&emsp;Wifi
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="checkbox text-align">
+                                        <label>
+                                            <input type="checkbox" class="minimal" value="1" name="card">&emsp;Card
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="checkbox text-align">
+                                        <label>
+                                            <input type="checkbox" class="minimal" value="1" name="private_room">&emsp;Private room
                                         </label>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@ Search
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="checkbox text-align">
                                         <label>
-                                            <input type="checkbox" value="1" name="no_smoking"> No smoking
+                                            <input type="checkbox" class="minimal" value="1" name="no_smoking">&emsp;No smoking
                                         </label>
                                     </div>
                                 </div>
@@ -200,7 +200,23 @@ Search
     </section>
     <!-- /.content -->
 </div>
-
+<div class="modal fade" id="modal-pr-long" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Pr long detail</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -231,8 +247,33 @@ Search
             });  
         }
     );
+
+    $(document).on("click", ".btn-detail-pr-long",function() {
+        var prLong = $(this).data('pr-long');
+        if (prLong.length) {
+            var modalPrLong = $('#modal-pr-long');
+            modalPrLong.find('.modal-body p').html(prLong);
+            modalPrLong.modal('show'); 
+        }
+    });
+
     $(function() {
-       $('.input-group-addon').click(function(event) {
+        //Flat red color scheme for iCheck
+        $('input[type="checkbox"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+        })
+
+
+        $('.btn-detail-pr-short').click(function(event) {
+            console.log(22323);
+            var prShort = $(this).data('pr-short');
+            if (prShort.length) {
+                var modalPrShot = $('#modal');
+                modalPrShot.find('.modal-body p').html(prShort);
+                modalPrShot.modal('show'); 
+            }
+        });
+        $('.input-group-addon').click(function(event) {
             // if ($(this).data('requestRunning')) {
             //     return;
             // }

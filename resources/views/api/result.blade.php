@@ -48,7 +48,11 @@
                         <td>{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</td>
                         <td>{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</td>
                         <td>{{ !empty($item['contacts']['tel']) ? $item['contacts']['tel'] : '' }}</td>
-                        <td>{!! !empty($item['sales_points']['pr_short']) ? $item['sales_points']['pr_short'] : '' !!}</td>
+                        <td>
+                            @if(!empty($item['sales_points']['pr_short']) && $item['sales_points']['pr_short'])
+                            <button class="btn btn-info btn-detail-pr-long" data-pr-long="{{!empty($item['sales_points']['pr_long']) ? $item['sales_points']['pr_long'] : ''}}"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                            @endif
+                        </td>
                 </tr>
                 @endforeach
             </tbody>

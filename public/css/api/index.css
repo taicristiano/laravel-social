@@ -16,10 +16,20 @@
         margin-bottom: 0px;
     }
     .text-align {
-        text-align: center;
+        // text-align: center;
     }
 }
-.box-primary {
+.checkbox label, .radio label {
+    padding-left: 15px;
+}
+.form-control {
+    border-radius: 5px;
+}
+.input-group-addon {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.box-info {
     padding-left: 15px;
     padding-right: 15px;
 }

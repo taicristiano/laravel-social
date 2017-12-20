@@ -22,6 +22,7 @@
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminlte/dist/js/demo.js')}}"></script>
+<script src="{{asset('adminlte/plugins/iCheck/icheck.min.js')}}"></script>
 
 {{-- <script src="{{asset('js/common.js')}}"></script> --}}
 <!-- Bootstrap WYSIHTML5 -->
