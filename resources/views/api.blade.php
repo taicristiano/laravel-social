@@ -27,7 +27,7 @@ Search
                                             $freeword = $data['freeword'];
                                         }
                                     @endphp
-                                    <input type="text" class="form-control padding-16" placeholder="text" name="freeword" value="{{$freeword}}">
+                                    <input type="text" class="form-control padding-16" placeholder="@lang('api/search.Freeword')" name="freeword" value="{{$freeword}}">
                                     <span class="input-group-addon">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                         <i class="fa fa-spinner fa-spin display-none" aria-hidden="true"></i>

@@ -96,3 +96,5 @@
 .table-responsive > .table-bordered > tbody > tr:last-child > td,
 .table-responsive > .table-bordered > tfoot > tr:last-child > td {
     border-bottom: 0;
+}
+
