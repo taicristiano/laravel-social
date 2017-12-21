@@ -21,7 +21,7 @@ Search
                         <div class="box-body">
                             <div class="form-group row margin-bottom-0">
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 margin-bottom-15 input-group">
-                                    <input type="text" class="form-control" placeholder="text" name="text" value="日本">
+                                    <input type="text" class="form-control" placeholder="text" name="freeword" value="日本">
                                     <span class="input-group-addon">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                         <i class="fa fa-spinner fa-spin display-none" aria-hidden="true"></i>
@@ -83,6 +83,15 @@ Search
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">Hit per page</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
                                         <input type="number" class="form-control" placeholder="Hit per page" onkeypress='return event.charCode >= 48 && event.charCode <= 57' min="10" max="100" name="hit_per_page" value="10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">Sort</label>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
+                                        <select class="form-control" name="sort">
+                                            <option value="1">Store name</option>
+                                            <option value="2">Business type</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -249,6 +258,7 @@ Search
     );
 
     $(document).on("click", ".btn-detail-pr-long",function() {
+        event.preventDefault();
         var prLong = $(this).data('pr-long');
         if (prLong.length) {
             var modalPrLong = $('#modal-pr-long');
@@ -263,21 +273,11 @@ Search
             checkboxClass: 'icheckbox_minimal-blue',
         })
 
-
-        $('.btn-detail-pr-short').click(function(event) {
-            console.log(22323);
-            var prShort = $(this).data('pr-short');
-            if (prShort.length) {
-                var modalPrShot = $('#modal');
-                modalPrShot.find('.modal-body p').html(prShort);
-                modalPrShot.modal('show'); 
-            }
-        });
         $('.input-group-addon').click(function(event) {
-            // if ($(this).data('requestRunning')) {
-            //     return;
-            // }
-            // $(this).data('requestRunning', true);
+            if ($(this).data('requestRunning')) {
+                return;
+            }
+            $(this).data('requestRunning', true);
             var token = {
                 name: '_token',
                 value: window.Laravel.csrfToken
@@ -313,7 +313,7 @@ Search
                     $('.input-group-addon').find('.fa-spinner').addClass('display-none');
                     $('.input-group-addon').find('.fa-search').removeClass('display-none');
                     // waitingDialog.hide();
-                    // $('.fa-search').data('requestRunning', false);
+                    $('.input-group-addon').data('requestRunning', false);
                 },
             });
         });

@@ -30,7 +30,6 @@ class ApiSearchController extends Controller
     {
         $data = $request->all();
         unset($data['_token']);
-        unset($data['text']);
         unset($data['range']);
         unset($data['cordinates_mode']);
         // unset($data['input_coordinates_mode']);
