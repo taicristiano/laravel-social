@@ -22,5 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-Route::get('api/search', 'ApiSearchController@index')->name('api');
-Route::post('api/search-handle', 'ApiSearchController@handleSearch')->name('api-search');
+Route::get('api/search/{lang?}', 'ApiSearchController@index')->name('api');
+Route::get('api/search-handle/{lang?}', 'ApiSearchController@handleSearch')->name('api-search');

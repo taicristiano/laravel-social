@@ -1,44 +1,55 @@
 <div class="box box-info">
     <div class="box-header with-border">
-        <h3 class="box-title">Result</h3>
+        <h3 class="box-title">@lang('api/search.Result')</h3>
+        @if(!empty($data['url']))
+        <span class="url-search">{{$data['url']}}</span>
+        @endif
     </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive no-padding">
         @if(empty($data['rest']))
             <div class="text-center">
-                No record
+                @lang('api/search.No result found')
             </div>
         @else
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>情報更新日時</th>
-                    <th>店舗名称</th>
-                    <th>店舗名称カナ</th>
-                    <th>営業時間</th>
-                    <th>休業日</th>
-                    <th>住所</th>
-                    <th>電話番号</th>
-                    <th>ＰＲ（短</th>
+                    <th>@lang('api/search.Update date')</th>
+                    <th>@lang('api/search.Name sub')</th>
+                    <th>@lang('api/search.Name kana')</th>
+                    <th>@lang('api/search.Business hour')</th>
+                    <th>@lang('api/search.Holiday')</th>
+                    <th>@lang('api/search.Address')</th>
+                    <th>@lang('api/search.Tel')</th>
+                    <th>@lang('api/search.Pr short')</th>
                 </tr>
             </thead>
             <thead>
                 <tr class="filters">
                     <th></th>
-                    <th><input type="text" class="form-control" placeholder="情報更新日時" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="店舗名称" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="店舗名称カナ" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="営業時間" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="休業日" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="住所" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="電話番号" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="ＰＲ（短)" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Update date')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name sub')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name kana')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Business hour')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Holiday')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Address')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Tel')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Pr short')" onkeyup="searchItem(this)"></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($data['rest'] as $key => $item)
+                @php
+                    $result = [];
+                    if ($data['total_hit_count'] == 1) {
+                        $result[0] = $data['rest'];
+                    } else {
+                        $result = $data['rest'];
+                    }
+                @endphp
+                @foreach($result as $key => $item)
                 <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{ !empty($item['update_date']) ? $item['update_date'] : '' }}</td>

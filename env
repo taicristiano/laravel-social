@@ -77,3 +77,133 @@ TALK_URL=http://sns.dev/auth/kakao/callback
 WEBCHAT_ID=89da1b1b1cd1427fba6e5d45aaca5381
 WEBCHAT_SECRET=4f57386f3bf540e9bb1c8fa2b0adeb18
 WEBCHAT_URL=http://sns.dev/auth/webchat/callback
+
+
+
+
+<?php
+
+return [
+	'Search' => 'Search',
+	'Search' => 'Search ja',
+
+	'Freeword' => 'Freeword',
+	'Freeword' => 'Freeword ja',
+
+	'English' => 'English',
+	'English' => '英語',
+
+	'Japan' => 'Japan',
+	'Japan' => '日本語',
+
+	'China old' => 'China old',
+	'China old' => '中国語 (簡体字)',
+
+	'China new' => 'China new',
+	'China new' => '中国語 (繁体字)',
+
+	'Korea' => 'Korea',
+	'Korea' => '韓国語',
+
+	'Input coordinates mode' => 'Input coordinates mode',
+	'Input coordinates mode' => 'Input coordinates mode ja',
+
+	'Japan geolocation' => 'Japan',
+	'Japan geolocation' => '日本測地系',
+
+	'World geolocation' => 'World',
+	'World geolocation' => '世界',
+
+	'Range' => 'Range',
+	'Range' => 'Range ja',
+
+	'Freeword condition' => 'Freeword condition',
+	'Freeword condition' => 'Freeword condition ja',
+
+	'And' => 'And',
+	'And' => 'And ja',
+
+	'Or' => 'Or',
+	'Or' => 'Or ja',
+
+	'Cordinates mode' => 'Cordinates mode',
+	'Cordinates mode' => 'Cordinates mode ja',
+
+	'Hit per page' => 'Hit per page',
+	'Hit per page' => 'Hit per page ja',
+
+	'Sort' => 'Sort',
+	'Sort' => 'Sort ja',
+
+	'Store name' => 'Store name',
+	'Store name' => '店舗名',
+
+	'Business type' => 'Business type',
+	'Business type' => '業態',
+
+	'English speaking staff' => 'English speaking staff',
+	'English speaking staff' => 'English speaking staff ja',
+
+	'English menu' => 'English menu',
+	'English menu' => 'English menu ja',
+
+	' Korean speaking staff' => ' Korean speaking staff',
+	' Korean speaking staff' => ' Korean speaking staff ja',
+
+	' Korean menu' => ' Korean menu',
+	' Korean menu' => ' Korean menu ja',
+
+	'Chinese speaking staff' => 'Chinese speaking staff',
+	'Chinese speaking staff' => 'Chinese speaking staff ja',
+
+	' Simplified chinese menu' => ' Simplified chinese menu',
+	' Simplified chinese menu' => ' Simplified chinese menu ja',
+
+	' Traditional chinese menu' => ' Traditional chinese menu',
+	' Traditional chinese menu' => ' Traditional chinese menu ja',
+
+	' Vegetarian menu options' => ' Vegetarian menu options',
+	' Vegetarian menu options' => ' Vegetarian menu options ja',
+
+	' Religious menu options' => ' Religious menu options',
+	' Religious menu options' => ' Religious menu options ja',
+
+	'Wifi' => 'Wifi',
+	'Wifi' => 'Wifi ja',
+
+	'Card' => 'Card',
+	'Card' => 'Card ja',
+
+	'Private room' => 'Private room',
+	'Private room' => 'Private room ja',
+
+	'No smoking' => 'No smoking',
+	'No smoking' => 'No smoking',
+
+	'Result' => 'Result',
+	'Result' => 'Result ja',
+
+	'Update date' => 'Update date',
+	'Update date' => '情報更新日時',
+
+	'Name sub' => 'Name sub',
+	'Name sub' => '店舗名称',
+
+	'Name kana' => 'Name kana',
+	'Name kana' => '店舗名称カナ',
+	
+	'Business hour' => 'Business hour',
+	'Business hour' => '営業時間',
+	
+	'Holiday' => 'Holiday',
+	'Holiday' => '休業日',
+	
+	'Address' => 'Address',
+	'Address' => '住所',
+	
+	'Tel' => 'Tel',
+	'Tel' => '電話番号',
+	
+	'Pr short' => 'Pr short',
+	'Pr short' => 'ＰＲ（短）',
+];

@@ -1,4 +1,7 @@
 @media only screen and (max-width : 425px) {
+	.padding-16 {
+		padding: 16px;
+	}
     .margin-bottom-15 {
         margin-bottom: 15px;
     }
