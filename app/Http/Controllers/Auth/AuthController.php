@@ -42,16 +42,25 @@ class AuthController extends Controller
             $user = Socialite::driver($provider)->user();
             // Twitter $user->user['lang'] ok
             // Google $user->user['language'] ok
+            // dd($user);
             // INSTAGRAM ??? ok
         } catch (Exception $e) {
+            dd($e);
     	    return redirect('auth/' . $provider);
         }
-
+        $lang = 'en';
+        if (!empty($user->user['lang'])) {
+            $lang = $user->user['lang'];
+        }
+        if (!empty($user->user['language'])) {
+            $lang = $user->user['language'];
+        }
         $authUser = $this->findOrCreateUser($user);
 
         Auth::login($authUser, true);
 
-        return redirect('api/search');
+        return redirect()->route('api', ['lang' => $lang]);
+        // return redirect('api/search, []');
     }
 
     /**

@@ -98,3 +98,10 @@
     border-bottom: 0;
 }
 
+#modal-pr-long .modal-body,
+#modal-pr-long .modal-header,
+#modal-pr-long .modal-footer {
+    background-color: #00c0ef;
+	color: white;
+}
+               

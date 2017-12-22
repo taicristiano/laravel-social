@@ -64,10 +64,10 @@
 				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns2.png" class="auth/twitter"></li>
 				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns3.png" class="auth/google"></li>
 				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns4.png" class="auth/line"></li>
-				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns5.png" class="auth/sinaweibo"></li>
+				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns5.png" class="auth/weibo"></li>
 				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns6.png" class="auth/instagram"></li>
-				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns7.png" class="auth/cacaotalk"></li>
-				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns8.png" class="auth/webchat"></li>
+				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns7.png" class="auth/kakao"></li>
+				<li><img src="http://intepro.co.jp/SnsLogin-200/images/common/sns8.png" class="auth/weixin"></li>
 			</ul>
 		</section>
 	</div>

@@ -76,7 +76,7 @@ return [
         'redirect' => env('INSTAGRAM_URL'),
     ],
 
-    'talk' => [
+    'kakao' => [
         'client_id' => env('TALK_ID'),
         'client_secret' => env('TALK_SECRET'),
         'redirect' => env('TALK_URL'),

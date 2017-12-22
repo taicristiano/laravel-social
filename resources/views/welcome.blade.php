@@ -86,7 +86,7 @@
                     <a href="http://sns.dev/auth/facebook">Facebook ok (?)</a>
                     <a href="http://sns.dev/auth/twitter">Twitter ok (lang)</a>
                     <a href="http://sns.dev/auth/google">GOOGLE ok (language)</a>
-                    <a href="http://sns.dev/auth/line">line</a>
+                    <a href="http://sns.dev/auth/line">line ok(?)</a>
                     <a href="http://sns.dev/auth/weibo">Weibo</a>
                     <a href="http://sns.dev/auth/instagram">INSTAGRAM ok (?)</a>
                     <a href="http://sns.dev/auth/kakao">Talk</a>
