@@ -2,7 +2,7 @@
     <div class="box-header with-border">
         <h3 class="box-title">@lang('api/search.Result')</h3>
         @if(!empty($data['url']))
-        <span class="url-search">{{$data['url']}}</span>
+        <span class="url-search display-none">{{$data['url']}}</span>
         @endif
     </div>
     <!-- /.box-header -->

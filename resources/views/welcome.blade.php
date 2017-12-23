@@ -83,14 +83,14 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://sns.dev/auth/facebook">Facebook ok (?)</a>
-                    <a href="http://sns.dev/auth/twitter">Twitter ok (lang)</a>
-                    <a href="http://sns.dev/auth/google">GOOGLE ok (language)</a>
-                    <a href="http://sns.dev/auth/line">line ok(?)</a>
-                    <a href="http://sns.dev/auth/weibo">Weibo</a>
-                    <a href="http://sns.dev/auth/instagram">INSTAGRAM ok (?)</a>
-                    <a href="http://sns.dev/auth/kakao">Talk</a>
-                    <a href="http://sns.dev/auth/weixin">WebChat</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'facebook'])}}">Facebook ok (locale)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'twitter'])}}">Twitter ok (lang)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'google'])}}">GOOGLE ok (language)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'line'])}}">line ok(?)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'weibo'])}}">Weibo</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'instagram'])}}">INSTAGRAM ok (?)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'kakao'])}}">Talk ok(?)</a>
+                    <a href="{{route('redirect-provider', ['provider' => 'weixin'])}}">WebChat</a>
                 </div>
             </div>
         </div>

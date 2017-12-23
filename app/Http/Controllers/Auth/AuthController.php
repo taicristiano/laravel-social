@@ -14,6 +14,8 @@ use URL;
 use DB;
 use Illuminate\Support\Facades\Session;
 use Exception;
+use App\Library\IpHelper;
+use App\Library\StringHelper;
 
 class AuthController extends Controller
 {
@@ -36,31 +38,32 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback(Request $request, $provider)
     {
         try {
             $user = Socialite::driver($provider)->user();
-            // Twitter $user->user['lang'] ok
-            // Google $user->user['language'] ok
-            // dd($user);
-            // INSTAGRAM ??? ok
+            if($provider == 'facebook') {
+                $client = new \GuzzleHttp\Client();
+                $urlFace = 'https://graph.facebook.com/v2.6/' . $user->id . '/?access_token='.$user->token.'&fields=locale';
+                $response      = $client->request('GET', $urlFace);
+                $result        = json_decode($response->getBody()->getContents(), true);
+                if(!empty($result['locale'])) {
+                    $lang = $result['locale'];
+                }
+            }
+            if(empty($lang)) {
+                $lang = IpHelper::getLangByIp($user, $request->ip());
+            }
+            $lang = StringHelper::formatStringLanguage($lang);
         } catch (Exception $e) {
-            dd($e);
     	    return redirect('auth/' . $provider);
         }
-        $lang = 'en';
-        if (!empty($user->user['lang'])) {
-            $lang = $user->user['lang'];
-        }
-        if (!empty($user->user['language'])) {
-            $lang = $user->user['language'];
-        }
+
         $authUser = $this->findOrCreateUser($user);
 
         Auth::login($authUser, true);
-
-        return redirect()->route('api', ['lang' => $lang]);
-        // return redirect('api/search, []');
+        return redirect()->route('home2', ['lang' => $lang]);
+        // return redirect()->route('api', ['lang' => $lang]);
     }
 
     /**

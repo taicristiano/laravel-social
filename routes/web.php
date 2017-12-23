@@ -12,15 +12,17 @@
 */
 
 Route::get('/', function () {
+    // return view('welcome');
     return view('home1');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home2/{lang?}', 'HomeController@index2')->name('home2');
 
-Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider')->name('redirect-provider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback')->name('handle-provider');
 
 Route::get('api/search/{lang?}', 'ApiSearchController@index')->name('api');
 Route::get('api/search-handle/{lang?}', 'ApiSearchController@handleSearch')->name('api-search');
