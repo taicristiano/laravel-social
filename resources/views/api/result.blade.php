@@ -53,7 +53,7 @@
                 <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{ !empty($item['update_date']) ? $item['update_date'] : '' }}</td>
-                        <td>{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</td>
+                        <td>{{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}</td>
                         <td>{{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}</td>
                         <td>{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</td>
                         <td>{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</td>

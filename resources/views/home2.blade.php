@@ -68,7 +68,7 @@
                         </li>
                         <li><a href="https://www.google.co.jp/" target="_blank">
                             <img src="{{asset('images/btn_3.png')}}">
-                            <span class="en @if($lang == 'en') on @endif">event information</span>
+                            <span class="en @if($lang == 'en') on @endif">Event information</span>
                             <span class="zh-cn @if($lang == 'zh-cn') on @endif">事件信息</span>
                             <span class="zh-tw @if($lang == 'zh-tw') on @endif">事件信息</span>
                             <span class="ko @if($lang == 'ko') on @endif">이벤트 정보</span>
@@ -77,7 +77,7 @@
                         </li>
                         <li><a href="https://travel.rakuten.co.jp/cars/area/kinki/?s_kwcid=paidsearch&amp;k_clickid=03111ba4-94e5-469f-8eae-828c86028881" target="_blank">
                             <img src="{{asset('images/btn_4.png')}}">
-                            <span class="en @if($lang == 'ja') on @endif">Hire a rent-a-car</span>
+                            <span class="en @if($lang == 'en') on @endif">Hire a rent-a-car</span>
                             <span class="zh-cn @if($lang == 'zh-cn') on @endif">租車</span>
                             <span class="zh-tw @if($lang == 'zh-tw') on @endif">租车</span>
                             <span class="ko @if($lang == 'ko') on @endif">자동차를 렌트</span>
@@ -86,7 +86,7 @@
                         </li>
                         <li><a href="#">
                             <img src="{{asset('images/btn_5.png')}}">
-                            <span class="en @if($lang == 'en') on @endif">Travel/Insurance</span>
+                            <span class="en @if($lang == 'en') on @endif">Travel / Insurance</span>
                             <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                             <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                             <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
