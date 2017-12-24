@@ -1,0 +1,408 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: url(../../../images/background.jpg);
+}
+img {
+    vertical-align: bottom;
+}
+p {
+    margin-top: 0;
+}
+.en,
+.ja,
+.zh-cn,
+.zh-tw,
+.ko {
+    display: none;
+}
+header {
+    background-color: #442020;
+    padding: 0.5em;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+header h1 {
+    margin: 0;
+    color: #FFF;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+header select {
+    padding: 0.3em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    font-size: 0.8em;
+    width: 40%;
+}
+.btn {
+    background-color: #FFF;
+    border: solid #D50409 1px;
+    text-align: center;
+    color: #D50409;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    display: block;
+}
+.btn:disabled {
+    border: solid #FD9396 1px;
+    color: #FD9396;
+}
+.on {
+    display: block !important;
+}
+.logo {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.logo span {
+    display: block;
+}
+.logo img {
+    width: auto;
+    height: 15vh;
+    margin-bottom: 0.2em;
+}
+.animation2 {
+    position: absolute;
+    width: 90vw;
+    top: 25vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.animation2 select {
+    margin-bottom: 1em;
+}
+.animation2 .contract {
+    margin-bottom: 1em;
+}
+.animation2 .contract span.on {
+    margin-bottom: 1em;
+}
+.animation2 .contract .agree {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+}
+.animation2 .contract .agree div:nth-of-type(1) {
+    position: relative;
+    min-width: 50px;
+}
+.animation2 .contract .agree span.on {
+    display: i !important;
+}
+.animation2 .contract .agree input[type="checkbox"].toggle-button {
+    outline: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 50px;
+    background-color: #ddd;
+    transition: background-color .4s ease;
+    margin: 0;
+}
+.animation2 .contract .agree input[type="checkbox"].toggle-button:checked {
+    background-color: #bbb;
+}
+.animation2 .contract .agree input[type="checkbox"].toggle-button + label {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    background-color: #eee;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    transition: left .4s ease, background-color .4s ease;
+    vertical-align: top;
+}
+.animation2 .contract .agree input[type="checkbox"].toggle-button:checked + label {
+    display: inline-block;
+    left: 20px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    background-color: #00bbd3;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+.animetion1 {
+    animation-duration: 2s;
+    animation-name: animation_logo;
+    animation-fill-mode: forwards;
+}
+.animetion1_1 {
+    opacity: 0;
+    animation-delay: 1.6s;
+    animation-duration: 0.4s;
+    animation-name: animation_name;
+    animation-fill-mode: forwards;
+}
+.animation2 {
+    max-width: 640px;
+    opacity: 0;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-name: animation_2;
+    animation-fill-mode: forwards;
+}
+.animation3.on {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-name: animation_name;
+    animation-fill-mode: forwards;
+}
+.btn_language,
+.animation3 {
+    display: none;
+}
+.snslogin ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    max-width: 640px;
+}
+.snslogin ul li {
+    width: 22%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+}
+.snslogin ul li img {
+    width: 100%;
+    opacity: 0.5;
+}
+.snslogin ul li .snslogin .on img {
+    opacity: 1.0;
+    cursor: pointer;
+}
+.snslogin ul li:nth-child(4n) {
+    margin-right: 0;
+}
+.snslogin.on ul li img {
+    opacity: 1.0;
+    cursor: pointer;
+}
+.terms {
+    padding: 1em;
+}
+.terms h1 {
+    font-size: 1.2em;
+    color: #442020;
+}
+.terms h2 {
+    font-size: 1em;
+    background-color: #442020;
+    color: #FFF;
+    padding: 0.5em;
+}
+.mat {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    opacity: 0;
+    transition: all 100ms 0s ease;
+}
+.mat .msg {
+    padding: 1em;
+    background: url(../../../images/background.jpg);
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+}
+.mat .msg span {
+    margin-bottom: 1em;
+}
+.mat .msg button > span {
+    margin-bottom: 0;
+}
+.mat .msg.on {
+    display: block;
+}
+.mat.on {
+    display: block;
+    opacity: 1.0;
+}
+.logo2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+.logo2 img {
+    width: auto;
+    height: 15vh;
+}
+.logo2 span {
+    display: block;
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.menu ul li {
+    margin: 2%;
+}
+.menu ul li a {
+    background-color: #FFF;
+    text-decoration: none;
+    display: block;
+    border: solid #CCC 3px;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #D50409;
+    text-align: center;
+}
+.menu ul li a img {
+    width: 80%;
+    margin-bottom: 0.5em;
+}
+@media all and (min-width: 639px) {
+    .menu ul li {
+        width: 21%;
+    }
+}
+@media all and (max-width: 640px) {
+    .menu ul {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .menu ul li {
+        width: 46%;
+    }
+}
+.status {
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    display: none;
+}
+@media all and (min-width: 639px) {
+    .wrap {
+        position: relative;
+        width: 640px;
+        margin: 0 auto;
+    }
+}
+@media all and (max-width: 640px) {
+    .wrap {
+        position: relative;
+    }
+}
+.status span:nth-of-type(1):before {
+    content: "言語：";
+}
+.status span:nth-of-type(2):before {
+    content: "経過：";
+}
+.status span:nth-of-type(3):before {
+    content: "開始：";
+}
+.status span:nth-of-type(4):before {
+    content: "アカウント：";
+}
+@keyframes animation_logo {
+    0% {
+        top: 15vh;
+        opacity: 0;
+    }
+    50% {
+        top: 20vh;
+        opacity: 1.0;
+    }
+    80% {
+        top: 20vh;
+        opacity: 1.0;
+    }
+    100% {
+        top: 4vh;
+        opacity: 1.0;
+    }
+}
+@keyframes animation_name {
+    100% {
+        opacity: 1.0;
+    }
+}
+@keyframes animation_2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+.shoplist ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    max-width: 640px;
+}
+.snslogin ul li {
+    width: 22%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+}
+.snslogin ul li img {
+    width: 100%;
+    opacity: 0.5;
+}
+.snslogin ul li .snslogin .on img {
+    opacity: 1.0;
+    cursor: pointer;
+}
+.snslogin ul li:nth-child(4n) {
+    margin-right: 0;
+}
+.snslogin.on ul li img {
+    opacity: 1.0;
+    cursor: pointer;
+}
+/*# sourceMappingURL=common.css.map */

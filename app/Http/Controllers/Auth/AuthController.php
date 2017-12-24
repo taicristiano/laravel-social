@@ -42,47 +42,16 @@ class AuthController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->user();
-            if($provider == 'facebook') {
-                $client = new \GuzzleHttp\Client();
-                $urlFace = 'https://graph.facebook.com/v2.6/' . $user->id . '/?access_token='.$user->token.'&fields=locale';
-                $response      = $client->request('GET', $urlFace);
-                $result        = json_decode($response->getBody()->getContents(), true);
-                if(!empty($result['locale'])) {
-                    $lang = $result['locale'];
-                }
-            }
-            if(empty($lang)) {
-                $lang = IpHelper::getLangByIp($user, $request->ip());
-            }
-            $lang = StringHelper::formatStringLanguage($lang);
+            $lang = StringHelper::formatStringLanguage($user, $provider);
+
+            $authUser = User::findOrCreateUser($user, $lang, $request->ip(), $provider);
+
+            Auth::login($authUser, true);
+            return redirect()->route('callback', ['lang' => $lang]);
         } catch (Exception $e) {
-    	    return redirect('auth/' . $provider);
+            dd($e);
+            return redirect('auth/' . $provider);
         }
 
-        $authUser = $this->findOrCreateUser($user);
-
-        Auth::login($authUser, true);
-        return redirect()->route('home2', ['lang' => $lang]);
-        // return redirect()->route('api', ['lang' => $lang]);
-    }
-
-    /**
-     * Return user if exists; create and return if doesn't
-     *
-     * @param $socialUser
-     * @return User
-     */
-    private function findOrCreateUser($socialUser)
-    {
-        if ($authUser = User::where('social_id', $socialUser->id)->first()) {
-            return $authUser;
-        }
-
-        return User::create([
-            'name' => $socialUser->nickname,
-            'email' => $socialUser->email,
-            'social_id' => $socialUser->id,
-            'password' => '123213123',
-        ]);
     }
 }

@@ -33,8 +33,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index2()
+    public function index2($lang = 'en')
     {
-        return view('home2');
+        return view('home2', compact('lang'));
     }
 }

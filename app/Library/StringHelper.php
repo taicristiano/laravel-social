@@ -4,6 +4,26 @@ namespace App\Library;
 
 class StringHelper
 {
+	public static function getLangOfUser($user, $provider)
+	{
+		$lang = 'en';
+        if (!empty($user->user['lang'])) {
+            $lang = $user->user['lang'];
+        } elseif(!empty($user->user['language'])) {
+            $lang = $user->user['language'];
+        } else {
+            if($provider == 'facebook') {
+                $client = new \GuzzleHttp\Client();
+                $urlFace = 'https://graph.facebook.com/v2.6/' . $user->id . '/?access_token='.$user->token.'&fields=locale';
+                $response      = $client->request('GET', $urlFace);
+                $result        = json_decode($response->getBody()->getContents(), true);
+                if(!empty($result['locale'])) {
+                    $lang = $result['locale'];
+                }
+            }
+        }
+        return $lang;
+	}
 	/**
 	 * format string japan language
 	 * @param  string $lang
@@ -65,8 +85,9 @@ class StringHelper
 	 * @param  string $lang
 	 * @return string
 	 */
-	public static function formatStringLanguage($lang)
+	public static function formatStringLanguage($user, $provider)
 	{
+		$lang = self::getLangOfUser($user, $provider);
 		$lang = self::formatStringJapanLanguage($lang);
 		$lang = self::formatStringChinaOldLanguage($lang);
 		$lang = self::formatStringChinaNewLanguage($lang);
