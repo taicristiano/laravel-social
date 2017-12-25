@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Session;
 use Exception;
 use App\Library\IpHelper;
 use App\Library\StringHelper;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -42,6 +43,8 @@ class AuthController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->user();
+            Log::info($provider);
+            Log::info(print_r($user, true));
             $lang = StringHelper::formatStringLanguage($user, $provider);
 
             $authUser = User::findOrCreateUser($user, $lang, $request->ip(), $provider);
