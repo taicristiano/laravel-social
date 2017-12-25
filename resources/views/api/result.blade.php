@@ -17,9 +17,16 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>@lang('api/search.Thumnail')</th>
                     <th>@lang('api/search.Update date')</th>
-                    <th>@lang('api/search.Name sub')</th>
-                    <th>@lang('api/search.Name kana')</th>
+                    <th>@lang('api/search.Name')</th>
+                    <th>
+                        @if($lang == 'ja')
+                            @lang('api/search.Name kana')
+                        @else
+                            @lang('api/search.Name sub')
+                        @endif
+                    </th>
                     <th>@lang('api/search.Business hour')</th>
                     <th>@lang('api/search.Holiday')</th>
                     <th>@lang('api/search.Address')</th>
@@ -30,9 +37,16 @@
             <thead>
                 <tr class="filters">
                     <th></th>
+                    <th></th>
                     <th><input type="text" class="form-control" placeholder="@lang('api/search.Update date')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name sub')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name kana')" onkeyup="searchItem(this)"></th>
+                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name')" onkeyup="searchItem(this)"></th>
+                    <th>
+                        @if($lang == 'ja')
+                        <input type="text" class="form-control" placeholder="@lang('api/search.Name kana')" onkeyup="searchItem(this)">
+                        @else
+                        <input type="text" class="form-control" placeholder="@lang('api/search.Name sub')" onkeyup="searchItem(this)">
+                        @endif
+                    </th>
                     <th><input type="text" class="form-control" placeholder="@lang('api/search.Business hour')" onkeyup="searchItem(this)"></th>
                     <th><input type="text" class="form-control" placeholder="@lang('api/search.Holiday')" onkeyup="searchItem(this)"></th>
                     <th><input type="text" class="form-control" placeholder="@lang('api/search.Address')" onkeyup="searchItem(this)"></th>
@@ -52,9 +66,25 @@
                 @foreach($result as $key => $item)
                 <tr>
                         <td>{{ $key + 1 }}</td>
+                        <td>
+                            @php
+                                if(!empty($item['image_url']['thumbnail'])) {
+                                    $img = "<img src=" . $item['image_url']['thumbnail'] . ">";
+                                } else {
+                                    $img = '';
+                                }
+                            @endphp
+                            {!! $img !!}
+                        </td>
                         <td>{{ !empty($item['update_date']) ? $item['update_date'] : '' }}</td>
-                        <td>{{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}</td>
-                        <td>{{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}</td>
+                        <td>{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</td>
+                        <td>
+                            @if($lang == 'ja')
+                            {{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}
+                            @else
+                            {{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}
+                            @endif
+                        </td>
                         <td>{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</td>
                         <td>{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</td>
                         <td>{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</td>

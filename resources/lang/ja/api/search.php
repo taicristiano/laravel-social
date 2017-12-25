@@ -35,6 +35,7 @@ return [
 	'No smoking'               => 'No smoking ja',
 	'Result'                   => 'Result ja',
 	'Update date'              => '情報更新日時',
+	'Name'                     => 'Name ja',
 	'Name sub'                 => '店舗名称',
 	'Name kana'                => '店舗名称カナ',
 	'Business hour'            => '営業時間',
@@ -45,4 +46,5 @@ return [
 	'Pr long detail'           => 'Pr long detail ja',
 	'Close'                    => 'Close ja',
 	'No result found'          => 'No result found ja',
+	'Thumnail'                 => 'Thumnail ja',
 ];

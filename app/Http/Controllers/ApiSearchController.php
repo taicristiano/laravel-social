@@ -29,11 +29,13 @@ class ApiSearchController extends Controller
         $result = [];
         
         $hasResult = false;
+        $testLatLog = 0;
         if (!empty($data['lang'])) {
             $hasResult = true;
             $result    = $this->callApiSns($data);
+            $testLatLog = !empty($data['test_lat']) ? $data['test_lat'] : 0;
         }
-        return view('api', compact('lang', 'result', 'hasResult', 'data'));
+        return view('api', compact('lang', 'result', 'hasResult', 'data', 'testLatLog'));
     }
 
     /**
@@ -47,7 +49,7 @@ class ApiSearchController extends Controller
         App::setLocale($lang);
         $data   = $request->all();
         $result = $this->callApiSns($data);
-        return view('api.result')->with('data', $result);
+        return view('api.result')->with('data', $result)->with('lang', $lang);
     }
 
     /**
@@ -63,8 +65,11 @@ class ApiSearchController extends Controller
         // unset($data['input_coordinates_mode']);
         // unset($data['freeword_condition']);
         // https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/format=json&keyid=81ba6f93a9a519e396968467395a79aa&format=json&keyid=81ba6f93a9a519e396968467395a79aa&freeword=&lang=en&input_coordinates_mode=1&freeword_condition=1&hit_per_page=10&sort=1&longitude=139.75992&latitude=35.673092
-        $data['latitude']  = '35.673092';
-        $data['longitude'] = '139.75992';
+        if(!empty($data['test_lat'])) {
+            $data['latitude']  = '35.673092';
+            $data['longitude'] = '139.75992';
+            unset($data['test_lat']);
+        }
         $client            = new \GuzzleHttp\Client();
         $format            = "json";
         $url               = 'https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/';

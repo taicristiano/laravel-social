@@ -6,8 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <title>Welcome Spot</title>
-<meta name='robots' content='noindex,follow' />
-<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
+<link rel="apple-touch-icon" href="{{asset('images/favicon.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/favicon.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/favicon.png')}}">
 <link rel='stylesheet' id='common-css'  href="{{asset('css/frontend/common.css')}}" type='text/css' media='all' />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{asset('/js/frontend/common.js')}}"></script>

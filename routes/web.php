@@ -12,13 +12,12 @@
 */
 
 Route::get('/', function () {
-    // return view('welcome');
     return view('home1');
-});
+})->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home2/{lang?}', 'HomeController@index2')->name('callback');
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider')->name('redirect-provider');

@@ -314,6 +314,19 @@ Search
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="checkbox text-align">
+                                        <label>
+                                            @php
+                                                $test = 0;
+                                                if ($testLatLog) {
+                                                    $test = $testLatLog;
+                                                }
+                                            @endphp
+                                            <input type="checkbox" class="minimal" value="1" name="test_lat" @if($test == 1) checked @endif>&emsp;Test lat/log
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- /.box-body -->
@@ -386,6 +399,8 @@ Search
         var urlCurrent = window.location.href; 
         url = urlCurrent.replace(langCurrent, lang);
         // url = urlSearchBase + '/' + lang;
+        var stringReplace = 'lang=' + langCurrent;
+        url = url.replace(stringReplace, 'lang=' + lang);
         window.location.href = url;
     });
     $(document).on("click", ".btn-detail-pr-long",function() {
