@@ -335,7 +335,7 @@ Search
                 <!-- /.box -->
                 <div id="result">
                     @if($hasResult)
-                        @include('api.result', ['data' => $result])
+                        @include('api.result1', ['data' => $result])
                     @endif
                 </div>
             </div>
@@ -355,6 +355,28 @@ Search
             </div>
             <div class="modal-body">
                 <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@lang('api/search.Close')</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="card-restaurent" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@lang('api/search.Card detail')</h4>
+            </div>
+            <div class="modal-body">
+                <div class="detail col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                </div>
+                <div class="image col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                </div>
+                <div class="other col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">@lang('api/search.Close')</button>
@@ -406,7 +428,7 @@ Search
         url = url.replace(stringReplace, 'lang=' + lang);
         window.location.href = url;
     });
-    $(document).on("click", ".btn-detail-pr-long",function() {
+    $(document).on("click", ".btn-detail-pr-long", function() {
         event.preventDefault();
         var prLong = $(this).data('pr-long');
         if (prLong.length) {
@@ -414,6 +436,27 @@ Search
             modalPrLong.find('.modal-body p').html(prLong);
             modalPrLong.modal('show'); 
         }
+    });
+
+    $(document).on("click", ".btn-detail-card", function() {
+        event.preventDefault();
+        var modalCard = $('#card-restaurent');
+        modalCard.find('.modal-body .detail').html('');
+        modalCard.find('.modal-body .image').html('');
+        modalCard.find('.modal-body .other').html('');
+        var order = $(this).data('order');
+        console.log(modalCard.find('.modal-body .detail'));
+        modalCard.find('.modal-body .detail').append($('.name-' + order).html());
+        modalCard.find('.modal-body .detail').append($('.name-kana-' + order).html());
+        modalCard.find('.modal-body .detail').append($('.tel-' + order).html());
+        modalCard.find('.modal-body .image').append($('.img-restaurent-' + order).html());
+        modalCard.find('.modal-body').append($('.address-' + order).html());
+        modalCard.find('.modal-body').append($('.pr-short-' + order).html());
+        modalCard.find('.modal-body').append($('.pr-long-' + order).html());
+        modalCard.find('.modal-body').append($('.update-date-' + order).html());
+        modalCard.find('.modal-body').append($('.business-hour-' + order).html());
+        modalCard.find('.modal-body').append($('.holiday-' + order).html());
+        modalCard.modal('show'); 
     });
 
     $(function() {

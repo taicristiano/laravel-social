@@ -21,6 +21,27 @@
     .text-align {
         // text-align: center;
     }
+    .card-restaurent {
+        height: 430px;
+    }
+    .img-restaurent {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width : 320px) {
+    .card-restaurent {
+        height: 400px;
+    }
+}
+@media only screen and (min-width : 426px) {
+    .card-restaurent {
+        height: 240px;
+    }
+    .img-restaurent {
+        margin-bottom: 20px;
+        width: 200px;
+    }
 }
 .checkbox label, .radio label {
     padding-left: 15px;
@@ -98,10 +119,24 @@
     border-bottom: 0;
 }
 
-#modal-pr-long .modal-body,
-#modal-pr-long .modal-header,
-#modal-pr-long .modal-footer {
+.modal .modal-body,
+.modal .modal-header,
+.modal .modal-footer {
     background-color: #00c0ef;
 	color: white;
 }
-               
+
+.nav-tabs { border-bottom: 2px solid #DDD; }
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #666; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+// .tab-pane { padding: 15px 0; }
+.tab-content{
+    padding:20px 0px
+}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3); margin-top: 30px; }
+body{ background: #EDECEC;}               
