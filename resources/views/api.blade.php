@@ -369,6 +369,7 @@ Search
     var urlSearch = '{{route('api-search', ['lang' => $lang])}}';
     var urlSearchBase = '{{route('api', ['lang' => ''])}}';
     var langCurrent = '{{$lang}}';
+    var isHasLatitude = false;
     navigator.geolocation.getCurrentPosition(function(position) { 
             latitude = {
                 name: 'latitude',
@@ -378,6 +379,7 @@ Search
                 name: 'longitude',
                 value: position.coords.longitude,
             }
+            isHasLatitude = true;
         },
         function(failure) {
             $.getJSON('https://ipinfo.io/geo', function(response) { 
@@ -390,6 +392,7 @@ Search
                     name: 'longitude',
                     value: loc[1]
                 }
+                isHasLatitude = true;
             });  
         }
     );
@@ -414,12 +417,17 @@ Search
     });
 
     $(function() {
+        $('.input-group-addon').addClass('icon-serach');
         //Flat red color scheme for iCheck
         $('input[type="checkbox"].minimal').iCheck({
             checkboxClass: 'icheckbox_minimal-blue',
         })
 
-        $('.input-group-addon').click(function(event) {
+        $('.icon-serach').click(function(event) {
+            if (!isHasLatitude) {
+                return;
+            }
+
             if ($(this).data('requestRunning')) {
                 return;
             }
@@ -433,8 +441,8 @@ Search
             data.push(longitude);
             data.push(latitude);
             // waitingDialog.show()
-            $('.input-group-addon').find('.fa-spinner').removeClass('display-none');
-            $('.input-group-addon').find('.fa-search').addClass('display-none');
+            $('.icon-serach').find('.fa-spinner').removeClass('display-none');
+            $('.icon-serach').find('.fa-search').addClass('display-none');
             $.ajax({
                 url: urlSearch,
                 type: 'get',
@@ -446,20 +454,20 @@ Search
                     $('html, body').animate({
                         scrollTop: $("#result").offset().top
                     }, 2000);
-                    $('.input-group-addon').find('.fa-spinner').addClass('display-none');
-                    $('.input-group-addon').find('.fa-search').removeClass('display-none');
+                    $('.icon-serach').find('.fa-spinner').addClass('display-none');
+                    $('.icon-serach').find('.fa-search').removeClass('display-none');
                     history.pushState({}, '', $('.url-search').text());
                 },
                 error: function () {
-                    $('.input-group-addon').find('.fa-spinner').addClass('display-none');
-                    $('.input-group-addon').find('.fa-search').removeClass('display-none');
+                    $('.icon-serach').find('.fa-spinner').addClass('display-none');
+                    $('.icon-serach').find('.fa-search').removeClass('display-none');
                     // waitingDialog.hide();
                 },
                 complete: function () {
-                    $('.input-group-addon').find('.fa-spinner').addClass('display-none');
-                    $('.input-group-addon').find('.fa-search').removeClass('display-none');
+                    $('.icon-serach').find('.fa-spinner').addClass('display-none');
+                    $('.icon-serach').find('.fa-search').removeClass('display-none');
                     // waitingDialog.hide();
-                    $('.input-group-addon').data('requestRunning', false);
+                    $('.icon-serach').data('requestRunning', false);
                 },
             });
         });

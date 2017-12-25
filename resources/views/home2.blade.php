@@ -12,7 +12,7 @@
         <link rel="stylesheet" id="wfspot-css" href="{{asset('css/frontend/callback/wfspot.css')}}" type="text/css" media="all">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{{asset('/js/frontend/common.js')}}"></script>
-        <script src="{{asset('js/frontend/callback/wfspot.js')}}"></script>
+        {{-- <script src="{{asset('js/frontend/callback/wfspot.js')}}"></script> --}}
         <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
             .en-markup-crop-options {
             top: 18px !important;
