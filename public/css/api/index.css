@@ -1,3 +1,14 @@
+body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.content {
+    margin-top: 35px;
+}
+.box-info {
+    margin-bottom: 35px;
+}
 @media only screen and (max-width : 425px) {
 	.padding-16 {
 		padding: 16px;
@@ -19,28 +30,47 @@
         margin-bottom: 0px;
     }
     .text-align {
-        // text-align: center;
+        /*// text-align: center;*/
     }
     .card-restaurent {
-        height: 430px;
+        /*height: 430px;*/
+    }
+    .img-restaurent {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .tab-custom {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+@media only screen and (max-width : 320px) {
+    .card-restaurent {
+        /*height: 400px;*/
+    }
+    .padding-right-0 {
+        padding-right: 0px !important;
+    }
+}
+@media only screen and (min-width : 426px) {
+    .card-restaurent {
+        /*height: 240px;*/
     }
     .img-restaurent {
         margin-bottom: 20px;
         width: 100%;
     }
 }
-@media only screen and (max-width : 320px) {
-    .card-restaurent {
-        height: 400px;
-    }
+
+.padding-desktop {
+    padding-right: 0px;
 }
-@media only screen and (min-width : 426px) {
-    .card-restaurent {
-        height: 240px;
+@media only screen and (max-width : 1024px) {
+    .padding-desktop {
+        padding-right: 15px;
     }
-    .img-restaurent {
-        margin-bottom: 20px;
-        width: 200px;
+    .padding-ipad {
+        padding-right: 0px !important;
     }
 }
 .checkbox label, .radio label {
@@ -66,7 +96,8 @@
     cursor: pointer;
 }
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-    background: #ecf0f5 !important;
+    position: relative;
+    background-image: url(../../images/background.jpg) !important;
 }
 #searching .progress {
 	height: 15px;
@@ -135,8 +166,9 @@
 .tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
 // .tab-pane { padding: 15px 0; }
 .tab-content{
-    padding:20px 0px
+    padding:20px;
+    /*padding:20px 0px*/
 }
 
 .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3); margin-top: 30px; }
-body{ background: #EDECEC;}               
+            

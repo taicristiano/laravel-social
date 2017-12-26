@@ -9,7 +9,7 @@ Search
     <section class="content">
         <div class="row">
             <!-- left column -->
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                 <!-- general form elements -->
                 <div class="box box-info">
                     <div class="box-header with-border">
@@ -20,7 +20,7 @@ Search
                     <form role="form" id="search-form">
                         <div class="box-body">
                             <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 margin-bottom-15 input-group">
+                                <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 margin-bottom-15 input-group">
                                     @php
                                         $freeword = '';
                                         if (!empty($data['freeword'])) {
@@ -33,7 +33,7 @@ Search
                                         <i class="fa fa-spinner fa-spin display-none" aria-hidden="true"></i>
                                     </span>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
                                     <select class="form-control" name="lang" id="select-lang">
                                         <option value="en" @if($lang == 'en') selected @endif>@lang('api/search.English')</option>
                                         <option value="ja" @if($lang == 'ja') selected @endif>@lang('api/search.Japan')</option>
@@ -44,7 +44,7 @@ Search
                                 </div>
                             </div>
                             <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Input coordinates mode')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
                                         @php
@@ -60,9 +60,9 @@ Search
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Range')</label>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-ipad">
                                         @php
                                             $range = 500;
                                             if (!empty($data['range'])) {
@@ -78,9 +78,9 @@ Search
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Freeword condition')</label>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-desktop">
                                         @php
                                             $freewordCondition = 1;
                                             if (!empty($data['freeword_condition'])) {
@@ -93,11 +93,11 @@ Search
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            {{-- </div> --}}
+                            {{-- <div class="form-group row"> --}}
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Cordinates mode')</label>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-ipad">
                                         @php
                                             $cordinatesMode = 1;
                                             if (!empty($data['cordinates_mode'])) {
@@ -110,7 +110,7 @@ Search
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Hit per page')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
                                         @php
@@ -122,9 +122,9 @@ Search
                                         <input type="number" class="form-control padding-16" placeholder="Hit per page" onkeypress='return event.charCode >= 48 && event.charCode <= 57' min="10" max="100" name="hit_per_page" value="{{$hitPerPage}}">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Sort')</label>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-desktop padding-ipad">
                                         @php
                                             $sort = 1;
                                             if (!empty($data['sort'])) {
@@ -139,7 +139,7 @@ Search
                                 </div>
                             </div>
                             <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -152,7 +152,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -165,7 +165,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -178,7 +178,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -191,9 +191,9 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            {{-- </div> --}}
+                            {{-- <div class="form-group row margin-bottom-0"> --}}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -206,7 +206,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -219,7 +219,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -232,7 +232,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -245,9 +245,9 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row margin-bottom-0">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            {{-- </div> --}}
+                            {{-- <div class="form-group row margin-bottom-0"> --}}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -260,7 +260,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -273,7 +273,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -286,7 +286,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -299,9 +299,9 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            {{-- </div> --}}
+                            {{-- <div class="form-group row"> --}}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php
@@ -314,7 +314,7 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
                                             @php

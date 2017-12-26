@@ -47,4 +47,7 @@ return [
 	'Close'                    => 'Close',
 	'No result found'          => 'No result found',
 	'Thumnail'                 => 'Thumnail',
+	'Common'                   => 'Common',
+	'Time'                     => 'Time',
+	'PR'                       => 'PR',
 ];
