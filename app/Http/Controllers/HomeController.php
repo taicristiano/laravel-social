@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['terms']]);
     }
 
     /**
@@ -36,5 +36,14 @@ class HomeController extends Controller
     public function index2($lang = 'en')
     {
         return view('home2', compact('lang'));
+    }
+
+    /**
+     * Show terms
+     * @return \Illuminate\Http\Response
+     */
+    public function terms()
+    {
+        return view('terms');
     }
 }

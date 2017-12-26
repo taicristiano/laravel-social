@@ -48,17 +48,14 @@
                         <div class="tab-content card-restaurent">
                             <div role="tabpanel" class="tab-pane active" id="common-{{$key}}">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 img-restaurent-{{$key}}">
-                                        @php
-                                            $img = explode("?", $item['image_url']['thumbnail'])[0];
-                                        @endphp
-                                        <img src="{!! $img !!}" class="img-restaurent">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 img-restaurent-{{$key}}">
+                                        <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px">
                                     </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                                         <span class="name-{{$key}}">
                                             <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</p>
                                         </span>
-                                        {{-- <span class="name-kana-{{$key}}">
+                                        <span class="name-kana-{{$key}}">
                                             <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;
                                                 @if($lang == 'ja')
                                                 {{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}
@@ -66,14 +63,14 @@
                                                 {{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}
                                                 @endif
                                             </p>
-                                        </span> --}}
+                                        </span>
                                         <span class="tel-{{$key}}">
                                             <p><i class="fa fa-phone" aria-hidden="true"></i>&emsp;{{ !empty($item['contacts']['tel']) ? $item['contacts']['tel'] : '' }}</p>
                                         </span>
                                         <span class="address-{{$key}}">
                                             <p><i class="fa fa-map-marker" aria-hidden="true"></i>&emsp;{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</p>
                                         </span>
-                                        <a href="#" class="btn-detail-card btn btn-info pull-right" data-order="{{$key}}"><i class="fa fa-info" aria-hidden="true"></i>&emsp;Detail</a>
+                                        <!-- <a href="#" class="btn-detail-card btn btn-info pull-right" data-order="{{$key}}"><i class="fa fa-info" aria-hidden="true"></i>&emsp;Detail</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -104,10 +101,10 @@
                                     @endphp
                                     @if($isHasPrShot)
                                         @if($isHasPrLong)
-                                            <span class="pr-short-{{$key}}"><p>Sort:{!! $item['sales_points']['pr_short'] !!}</p></span>
-                                            <span class="pr-long-{{$key}}"><p>Long:{!! $item['sales_points']['pr_long'] !!}</p></span>
+                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
+                                            <span class="pr-long-{{$key}}"><p>{!! $item['sales_points']['pr_long'] !!}</p></span>
                                         @else
-                                            <span class="pr-short-{{$key}}"><p>Sort:{!! $item['sales_points']['pr_short'] !!}</p></span>
+                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
                                         @endif
                                     @endif
                                 </div>

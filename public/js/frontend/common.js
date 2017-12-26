@@ -1,5 +1,4 @@
 (function($){
-
     var root;
     //閾ｪ霄ｫ縺ｮURL繧貞叙蠕�
     var scripts = (function() {
@@ -27,13 +26,17 @@
     
     $(document).ready(function(){
         if(!$('.status').data('lang')) {
-            console.log(2323);
             setLang(language);
             $(".language").val(language);
         }
         setSession();
 
         $('.sns').html(sns);
+        if ($('#toggleButton').is(':checked')) {
+            $('.snslogin').addClass("on");
+        } else {
+            $('.snslogin').removeClass("on");
+        }
 
     });
 
@@ -47,7 +50,6 @@
     });
 
     $(document).on("change",".contract input[type=checkbox]",function(e){
-
         if ($(this).is(':checked')) {
             $('.snslogin').addClass("on");
         } else {

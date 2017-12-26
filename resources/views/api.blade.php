@@ -371,11 +371,15 @@ Search
                 <h4 class="modal-title">@lang('api/search.Card detail')</h4>
             </div>
             <div class="modal-body">
-                <div class="detail col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="row">
+                    <div class="detail col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    </div>
+                    <div class="image col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    </div>
                 </div>
-                <div class="image col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                </div>
-                <div class="other col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="other col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -445,17 +449,17 @@ Search
         modalCard.find('.modal-body .image').html('');
         modalCard.find('.modal-body .other').html('');
         var order = $(this).data('order');
-        console.log(modalCard.find('.modal-body .detail'));
         modalCard.find('.modal-body .detail').append($('.name-' + order).html());
         modalCard.find('.modal-body .detail').append($('.name-kana-' + order).html());
         modalCard.find('.modal-body .detail').append($('.tel-' + order).html());
         modalCard.find('.modal-body .image').append($('.img-restaurent-' + order).html());
-        modalCard.find('.modal-body').append($('.address-' + order).html());
-        modalCard.find('.modal-body').append($('.pr-short-' + order).html());
-        modalCard.find('.modal-body').append($('.pr-long-' + order).html());
-        modalCard.find('.modal-body').append($('.update-date-' + order).html());
-        modalCard.find('.modal-body').append($('.business-hour-' + order).html());
-        modalCard.find('.modal-body').append($('.holiday-' + order).html());
+        modalCard.find('.modal-body .other').append($('.address-' + order).html());
+        modalCard.find('.modal-body .other').append($('.pr-short-' + order).html());
+        modalCard.find('.modal-body .other').append($('.pr-long-' + order).html());
+        modalCard.find('.modal-body .other').append($('.update-date-' + order).html());
+        modalCard.find('.modal-body .other').append($('.business-hour-' + order).html());
+        modalCard.find('.modal-body .other').append($('.business-hour-' + order).html());
+        modalCard.find('.modal-body .other').append($('.holiday-' + order).html());
         modalCard.modal('show'); 
     });
 

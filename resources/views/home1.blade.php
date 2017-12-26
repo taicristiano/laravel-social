@@ -52,11 +52,11 @@
 						<input type="checkbox" id="toggleButton" class="toggle-button" value="agree"><label for="toggleButton"></label>
 					</div>
 					<div>
-						<span class="en">I agree to the <a href="./terms.html">terms</a> of service and login</span>
-						<span class="zh-cn"><a href="./terms.html">使用條款</a>我同意並登錄</span>
-						<span class="zh-tw"><a href="./terms.html">使用条款</a>我同意并登录</span>
-						<span class="ko"><a href="./terms.html">이용 약관</a>에 동의하여 로그인</span>
-						<span class="ja"><a href="./terms.html">利用規約</a>に同意してログインする</span>
+						<span class="en">I agree to the <a href="{{route('terms')}}">terms</a> of service and login</span>
+						<span class="zh-cn"><a href="{{route('terms')}}">使用條款</a>我同意並登錄</span>
+						<span class="zh-tw"><a href="{{route('terms')}}">使用条款</a>我同意并登录</span>
+						<span class="ko"><a href="{{route('terms')}}">이용 약관</a>에 동의하여 로그인</span>
+						<span class="ja"><a href="{{route('terms')}}">利用規約</a>に同意してログインする</span>
 					</div>
 				</div>
 			</section>
