@@ -329,7 +329,7 @@ Search
                 <!-- /.box -->
                 <div id="result">
                     @if($hasResult)
-                        @include('api.result1', ['data' => $result])
+                        @include('api.result', ['data' => $result])
                     @endif
                 </div>
             </div>

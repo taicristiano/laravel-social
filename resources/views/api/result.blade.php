@@ -7,112 +7,115 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <div class="table-responsive no-padding">
         @if(empty($data['rest']))
             <div class="text-center">
                 @lang('api/search.No result found')
             </div>
         @else
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>@lang('api/search.Thumnail')</th>
-                    <th>@lang('api/search.Update date')</th>
-                    <th>@lang('api/search.Name')</th>
-                    <th>
-                        @if($lang == 'ja')
-                            @lang('api/search.Name kana')
-                        @else
-                            @lang('api/search.Name sub')
-                        @endif
-                    </th>
-                    <th>@lang('api/search.Business hour')</th>
-                    <th>@lang('api/search.Holiday')</th>
-                    <th>@lang('api/search.Address')</th>
-                    <th>@lang('api/search.Tel')</th>
-                    <th>@lang('api/search.Pr short')</th>
-                </tr>
-            </thead>
-            <thead>
-                <tr class="filters">
-                    <th></th>
-                    <th></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Update date')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Name')" onkeyup="searchItem(this)"></th>
-                    <th>
-                        @if($lang == 'ja')
-                        <input type="text" class="form-control" placeholder="@lang('api/search.Name kana')" onkeyup="searchItem(this)">
-                        @else
-                        <input type="text" class="form-control" placeholder="@lang('api/search.Name sub')" onkeyup="searchItem(this)">
-                        @endif
-                    </th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Business hour')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Holiday')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Address')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Tel')" onkeyup="searchItem(this)"></th>
-                    <th><input type="text" class="form-control" placeholder="@lang('api/search.Pr short')" onkeyup="searchItem(this)"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @php
-                    $result = [];
-                    if ($data['total_hit_count'] == 1) {
-                        $result[0] = $data['rest'];
-                    } else {
-                        $result = $data['rest'];
-                    }
-                @endphp
-                @foreach($result as $key => $item)
-                <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>
-                            @php
-                                if(!empty($item['image_url']['thumbnail'])) {
-                                    $img = "<img src=" . $item['image_url']['thumbnail'] . ">";
-                                } else {
-                                    $img = '';
-                                }
-                            @endphp
-                            {!! $img !!}
-                        </td>
-                        <td>{{ !empty($item['update_date']) ? $item['update_date'] : '' }}</td>
-                        <td>{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</td>
-                        <td>
-                            @if($lang == 'ja')
-                            {{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}
-                            @else
-                            {{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}
-                            @endif
-                        </td>
-                        <td>{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</td>
-                        <td>{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</td>
-                        <td>{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</td>
-                        <td>{{ !empty($item['contacts']['tel']) ? $item['contacts']['tel'] : '' }}</td>
-                        <td>
-                            @php
-                                $isHasPrShot = false;
-                                $isHasPrLong = false;
-                                if (!empty($item['sales_points']['pr_short'])) {
-                                    $isHasPrShot = true;
-                                }
-                                if (!empty($item['sales_points']['pr_long'])) {
-                                    $isHasPrLong = true;
-                                }
-                            @endphp
-                            @if($isHasPrShot)
-                                @if($isHasPrLong)
-                                    <a href="#" class="btn-detail-pr-long" data-pr-long="{!! $item['sales_points']['pr_long'] !!}">{!! $item['sales_points']['pr_short'] !!}</a>
-                                @else
-                                    <span>{!! $item['sales_points']['pr_short'] !!}</span>
-                                @endif
-                            @endif
-                        </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+            @php
+                $result = [];
+                if ($data['total_hit_count'] == 1) {
+                    $result[0] = $data['rest'];
+                } else {
+                    $result = $data['rest'];
+                }
+            @endphp
+
+            @foreach($result as $key => $item)
+            @if($key % 2 == 0)
+            <div class="row tab-custom">
+            @endif
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-0">
+                    <!-- Nav tabs -->
+                    <div class="card">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#common-{{$key}}" aria-controls="common-{{$key}}" role="tab" data-toggle="tab">    <i class="fa fa-bars" aria-hidden="true"></i>&emsp;@lang('api/search.Common')
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#time-{{$key}}" aria-controls="time-{{$key}}" role="tab" data-toggle="tab" class="padding-right-0">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>&emsp;@lang('api/search.Uptime')
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#pr-{{$key}}" aria-controls="pr-{{$key}}" role="tab" data-toggle="tab">
+                                    <i class="fa fa-snowflake-o" aria-hidden="true"></i>&emsp;@lang('api/search.PR')
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content card-restaurent">
+                            <div role="tabpanel" class="tab-pane active" id="common-{{$key}}">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-restaurent-{{$key}}" style="width: 110px">
+                                        <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px">
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <span class="name-{{$key}}">
+                                            <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</p>
+                                        </span>
+                                        <span class="name-kana-{{$key}}">
+                                            <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;
+                                                @if($lang == 'ja')
+                                                {{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}
+                                                @else
+                                                {{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}
+                                                @endif
+                                            </p>
+                                        </span>
+                                        <span class="tel-{{$key}}">
+                                            <p><i class="fa fa-phone" aria-hidden="true"></i>&emsp;{{ !empty($item['contacts']['tel']) ? $item['contacts']['tel'] : '' }}</p>
+                                        </span>
+                                        <span class="address-{{$key}}">
+                                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&emsp;{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</p>
+                                        </span>
+                                        <!-- <a href="#" class="btn-detail-card btn btn-info pull-right" data-order="{{$key}}"><i class="fa fa-info" aria-hidden="true"></i>&emsp;Detail</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="time-{{$key}}">
+                                <div class="time-detail">
+                                    <span class="update-date-{{$key}}">
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&emsp;{!! !empty($item['update_date']) ? $item['update_date'] : '' !!}</p>
+                                    </span>
+                                    <span class="business-hour-{{$key}}">
+                                        <p><i class="fa fa-calendar" aria-hidden="true"></i>&emsp;{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</p>
+                                    </span>
+                                    <span class="holiday-{{$key}}">
+                                        <p><i class="fa fa-sign-in" aria-hidden="true"></i>&emsp;{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="pr-{{$key}}">
+                                <div class="pr-detail">
+                                    @php
+                                        $isHasPrShot = false;
+                                        $isHasPrLong = false;
+                                        if (!empty($item['sales_points']['pr_short'])) {
+                                            $isHasPrShot = true;
+                                        }
+                                        if (!empty($item['sales_points']['pr_long'])) {
+                                            $isHasPrLong = true;
+                                        }
+                                    @endphp
+                                    @if($isHasPrShot)
+                                        @if($isHasPrLong)
+                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
+                                            <span class="pr-long-{{$key}}"><p>{!! $item['sales_points']['pr_long'] !!}</p></span>
+                                        @else
+                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
+                                        @endif
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @if($key % 2 == 1)
+            </div>
+            @endif
+            @endforeach
         @endif
-        </div>
     </div>
 </div>

@@ -49,7 +49,7 @@ class ApiSearchController extends Controller
         App::setLocale($lang);
         $data   = $request->all();
         $result = $this->callApiSns($data);
-        return view('api.result1')->with('data', $result)->with('lang', $lang);
+        return view('api.result')->with('data', $result)->with('lang', $lang);
     }
 
     /**
