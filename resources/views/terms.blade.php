@@ -197,7 +197,7 @@
     </span>
 
 		<nav>
-			<a href="{{route('home')}}" class="btn">
+			<a href="{{route('login')}}" class="btn">
 				<span class="en">back to page</span>
 				<span class="zh-cn">前のページに戻る</span>
 				<span class="zh-tw">前のページに戻る</span>

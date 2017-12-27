@@ -48,6 +48,6 @@ return [
 	'No result found'          => 'No result found',
 	'Thumnail'                 => 'Thumnail',
 	'Common'                   => 'Common',
-	'Time'                     => 'Time',
+	'Uptime'                   => 'Uptime',
 	'PR'                       => 'PR',
 ];

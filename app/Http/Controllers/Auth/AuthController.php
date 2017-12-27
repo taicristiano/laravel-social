@@ -23,9 +23,9 @@ class AuthController extends Controller
     protected $redirectPath = '/';
     protected $redirectTo = '/';
     protected $request;
-
+    
 	/**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the user to the provider authentication page.
      *
      * @return Response
      */
@@ -35,7 +35,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from provider.
      *
      * @return Response
      */
@@ -50,9 +50,8 @@ class AuthController extends Controller
             $authUser = User::findOrCreateUser($user, $lang, $request->ip(), $provider);
 
             Auth::login($authUser, true);
-            return redirect()->route('callback', ['lang' => $lang]);
+            return redirect()->route('home', ['lang' => $lang]);
         } catch (Exception $e) {
-            dd($e);
             return redirect('auth/' . $provider);
         }
 

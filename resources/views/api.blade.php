@@ -191,8 +191,6 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            {{-- </div> --}}
-                            {{-- <div class="form-group row margin-bottom-0"> --}}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
@@ -245,8 +243,6 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            {{-- </div> --}}
-                            {{-- <div class="form-group row margin-bottom-0"> --}}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
@@ -299,8 +295,6 @@ Search
                                         </label>
                                     </div>
                                 </div>
-                            {{-- </div> --}}
-                            {{-- <div class="form-group row"> --}}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
                                     <div class="checkbox text-align">
                                         <label>
@@ -487,7 +481,6 @@ Search
             data.push(token);
             data.push(longitude);
             data.push(latitude);
-            // waitingDialog.show()
             $('.icon-serach').find('.fa-spinner').removeClass('display-none');
             $('.icon-serach').find('.fa-search').addClass('display-none');
             $.ajax({
@@ -508,100 +501,14 @@ Search
                 error: function () {
                     $('.icon-serach').find('.fa-spinner').addClass('display-none');
                     $('.icon-serach').find('.fa-search').removeClass('display-none');
-                    // waitingDialog.hide();
                 },
                 complete: function () {
                     $('.icon-serach').find('.fa-spinner').addClass('display-none');
                     $('.icon-serach').find('.fa-search').removeClass('display-none');
-                    // waitingDialog.hide();
                     $('.icon-serach').data('requestRunning', false);
                 },
             });
         });
     });
-
-    var waitingDialog = waitingDialog || (function ($) {
-        'use strict';
-        // Creating modal dialog's DOM
-        var $dialog = $(
-            '<div class="modal fade" id="searching" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
-            '<div class="modal-dialog modal-mss modal-sm">' +
-            '<div class="modal-content">' +
-                '<div class="modal-header"><h4 style="margin:0;"></h4></div>' +
-                '<div class="modal-body">' +
-                    '<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
-                '</div>' +
-            '</div></div></div>');
-
-        return {
-            show: function (message, options) {
-                // Assigning defaults
-                if (typeof options === 'undefined') {
-                    options = {};
-                }
-                if (typeof message === 'undefined') {
-                    message = 'Searching';
-                }
-                var settings = $.extend({
-                    dialogSize: 'm',
-                    progressType: '',
-                    onHide: null // This callback runs after the dialog was hidden
-                }, options);
-
-                // Configuring dialog
-                $dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
-                $dialog.find('.progress-bar').attr('class', 'progress-bar');
-                if (settings.progressType) {
-                    $dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
-                }
-                $dialog.find('h4').text(message);
-                // Adding callbacks
-                if (typeof settings.onHide === 'function') {
-                    $dialog.off('hidden.bs.modal').on('hidden.bs.modal', function (e) {
-                        settings.onHide.call($dialog);
-                    });
-                }
-                // Opening dialog
-                $dialog.modal();
-            },
-            /**
-             * Closes dialog
-             */
-            hide: function () {
-                $dialog.modal('hide');
-            }
-        };
-    })(jQuery);
-
-    function searchItem($this)
-    {
-        // $('#result .filters input').keyup(function(e){
-        $($this).keyup(function(e){
-            /* Ignore tab key */
-            var code = e.keyCode || e.which;
-            if (code == '9') return;
-            /* Useful DOM data and selectors */
-            var $input = $(this),
-            inputContent = $input.val().toLowerCase(),
-            $panel = $input.parents('#result'),
-            column = $panel.find('.filters th').index($input.parents('th')),
-            $table = $panel.find('.table'),
-            $rows = $table.find('tbody tr');
-            /* Dirtiest filter function ever ;) */
-            var $filteredRows = $rows.filter(function(){
-                var value = $(this).find('td').eq(column).text().toLowerCase();
-                return value.indexOf(inputContent) === -1;
-            });
-            /* Clean previous no-result if exist */
-            $table.find('tbody .no-result').remove();
-            /* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
-            $rows.show();
-            $filteredRows.hide();
-            /* Prepend no-result row if all rows are filtered */
-            if ($filteredRows.length === $rows.length) {
-                $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No result found</td></tr>'));
-            }
-        });
-    }
 </script>
 @endsection

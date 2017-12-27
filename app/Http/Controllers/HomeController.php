@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Library\IpHelper;
-use App\Library\StringHelper;
 
 class HomeController extends Controller
 {
@@ -15,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['terms']]);
+        $this->middleware('auth')->except('terms');
     }
 
     /**
@@ -23,19 +21,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang = 'en')
     {
-        return view('home');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index2($lang = 'en')
-    {
-        return view('home2', compact('lang'));
+        return view('home', compact('lang'));
     }
 
     /**

@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home1');
-})->name('home');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home/{lang?}', 'HomeController@index2')->name('callback');
 Route::get('/terms', 'HomeController@terms')->name('terms');
+Route::get('{lang?}', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider')->name('redirect-provider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback')->name('handle-provider');

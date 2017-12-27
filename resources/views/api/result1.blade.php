@@ -35,7 +35,7 @@
                             </li>
                             <li role="presentation">
                                 <a href="#time-{{$key}}" aria-controls="time-{{$key}}" role="tab" data-toggle="tab" class="padding-right-0">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>&emsp;@lang('api/search.Time')
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>&emsp;@lang('api/search.Uptime')
                                 </a>
                             </li>
                             <li role="presentation">
@@ -48,10 +48,10 @@
                         <div class="tab-content card-restaurent">
                             <div role="tabpanel" class="tab-pane active" id="common-{{$key}}">
                                 <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 img-restaurent-{{$key}}">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-restaurent-{{$key}}" style="width: 110px">
                                         <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px">
                                     </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         <span class="name-{{$key}}">
                                             <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</p>
                                         </span>
