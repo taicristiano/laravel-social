@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Search
+@lang('api/search.Search restaurant')
 @endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -13,7 +13,7 @@ Search
                 <!-- general form elements -->
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">@lang('api/search.Search')</h3>
+                        <h3 class="box-title">@lang('api/search.Search restaurant')</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->

@@ -49,7 +49,7 @@
                             <div role="tabpanel" class="tab-pane active" id="common-{{$key}}">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-restaurent-{{$key}}" style="width: 110px">
-                                        <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px">
+                                        <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px" onerror="this.src='{{asset('images/no-image.png')}}'">
                                     </div>
                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         <span class="name-{{$key}}">
@@ -65,10 +65,29 @@
                                             </p>
                                         </span>
                                         <span class="tel-{{$key}}">
-                                            <p><i class="fa fa-phone" aria-hidden="true"></i>&emsp;{{ !empty($item['contacts']['tel']) ? $item['contacts']['tel'] : '' }}</p>
+                                            @php
+                                                $tel = '';
+                                                if(!empty($item['contacts']['tel'])) {
+                                                    $tel = $item['contacts']['tel'];
+                                                }
+                                            @endphp
+                                            <p><i class="fa fa-phone" aria-hidden="true"></i>&emsp;<a href="tel:{{$tel}}">{{$tel}}</a></p>
                                         </span>
                                         <span class="address-{{$key}}">
-                                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&emsp;{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</p>
+                                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&emsp;
+                                            @php
+                                                $latitude = 0;
+                                                $longitude = 0;
+                                                if(!empty($item['location']['latitude_wgs84'])) {
+                                                    $latitude = $item['location']['latitude_wgs84'];
+                                                }
+                                                if(!empty($item['location']['longitude_wgs84'])) {
+                                                    $longitude = $item['location']['longitude_wgs84'];
+                                                }
+                                                $urlMap = 'http://maps.google.com/maps?q=' . $latitude . ',' . $longitude;
+                                            @endphp
+                                            <a href="{{$urlMap}}" target="_blank">{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</a>
+                                            </p>
                                         </span>
                                         <!-- <a href="#" class="btn-detail-card btn btn-info pull-right" data-order="{{$key}}"><i class="fa fa-info" aria-hidden="true"></i>&emsp;Detail</a> -->
                                     </div>

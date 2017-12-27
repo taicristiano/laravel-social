@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'Search'                   => 'Search',
+	'Search restaurant'        => 'Search restaurant',
 	'Freeword'                 => 'Freeword',
 	'English'                  => 'English',
 	'Japan'                    => 'Japan',
