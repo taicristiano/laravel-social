@@ -436,6 +436,21 @@
         }
     });
 
+    $(document).on("click", ".see-more", function() {
+        event.preventDefault();
+        var item = $('.' + $(this).data('item'));
+        item.find('.fisrt').addClass('display-none');
+        item.find('.second').removeClass('display-none');
+    });
+
+    $(document).on("click", ".see-less", function() {
+        event.preventDefault();
+        var item = $('.' + $(this).data('item'));
+        console.log(item);
+        item.find('.fisrt').removeClass('display-none');
+        item.find('.second').addClass('display-none');
+    });
+
     $(document).on("click", ".btn-detail-card", function() {
         event.preventDefault();
         var modalCard = $('#card-restaurent');

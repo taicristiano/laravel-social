@@ -94,7 +94,7 @@ class StringHelper
 		$lang = self::formatStringChinaOldLanguage($lang);
 		$lang = self::formatStringChinaNewLanguage($lang);
 		$lang = self::formatStringKoreaLanguage($lang);
-		
+
 		$arrayLang = ['en', 'ja', 'zh-cn', 'zh-tw', 'ko'];
 		if (!$lang || !in_array($lang, $arrayLang)) {
 			if ($langSession) {
@@ -105,4 +105,24 @@ class StringHelper
 		}
 		return $lang;
 	}
+
+	/**
+	 * sub content string
+	 * @param  string $content
+	 * @param  integer $length
+	 * @return string
+	 */
+    public static function subContentString($content, $length)
+    {
+    	$result = [];
+    	$result['content'] = $content;
+    	$lenghtContent = strlen($content);
+        if ($lenghtContent > $length) {
+	        $result['sub'] = str_limit($content, $length);
+        	if (strlen($result['sub']) == strlen($result['content'])) {
+		        unset($result['sub']);
+        	}
+        }
+        return $result;
+    }
 }

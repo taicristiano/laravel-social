@@ -1,3 +1,8 @@
+<?php
+
+use App\Library\StringHelper;
+
+?>
 <div class="box box-info">
     <div class="box-header with-border">
         <h3 class="box-title">@lang('api/search.Result')</h3>
@@ -49,21 +54,44 @@
                             <div role="tabpanel" class="tab-pane active" id="common-{{$key}}">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-restaurent-{{$key}}" style="width: 110px">
-                                        <img src="{!! $item['image_url']['thumbnail'] !!}" class="img-restaurent" style="width: 80px" onerror="this.src='{{asset('images/no-image.png')}}'">
+                                        <img src="{!! !empty($item['image_url']['thumbnail']) ? $item['image_url']['thumbnail'] : '' !!}" class="img-restaurent" style="width: 80px" onerror="this.src='{{asset('images/no-image.png')}}'">
                                     </div>
                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        <span class="name-{{$key}}">
-                                            <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</p>
-                                        </span>
-                                        <span class="name-kana-{{$key}}">
-                                            <p><i class="fa fa-cutlery" aria-hidden="true"></i>&emsp;
-                                                @if($lang == 'ja')
-                                                {{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}
-                                                @else
-                                                {{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}
-                                                @endif
-                                            </p>
-                                        </span>
+                                        @if($lang == 'ja')
+                                            <span class="name-{{$key}}">
+                                                <p>
+                                                    <span class="pull-left fa-icon">
+                                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span class="content-type">{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</span>
+                                                </p>
+                                            </span>
+                                            <span class="name-kana-{{$key}}">
+                                                <p>
+                                                    <span class="pull-left fa-icon">
+                                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span class="content-type">{{ !empty($item['name']['name_kana']) ? $item['name']['name_kana'] : '' }}</span>
+                                                </p>
+                                            </span>
+                                        @else
+                                            <span class="name-{{$key}}">
+                                                <p>
+                                                    <span class="pull-left fa-icon">
+                                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span class="content-type">{{ !empty($item['name']['name']) ? $item['name']['name'] : '' }}</span>
+                                                </p>
+                                            </span>
+                                            <span class="name-kana-{{$key}}">
+                                                <p>
+                                                    <span class="pull-left fa-icon">
+                                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span class="content-type">{{ !empty($item['name']['name_sub']) ? $item['name']['name_sub'] : '' }}</span>
+                                                </p>
+                                            </span>
+                                        @endif
                                         <span class="tel-{{$key}}">
                                             @php
                                                 $tel = '';
@@ -71,10 +99,20 @@
                                                     $tel = $item['contacts']['tel'];
                                                 }
                                             @endphp
-                                            <p><i class="fa fa-phone" aria-hidden="true"></i>&emsp;<a href="tel:{{$tel}}">{{$tel}}</a></p>
+                                            <p>
+                                                <span class="pull-left fa-icon">
+                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="content-type">
+                                                    <a href="tel:{{$tel}}">{{$tel}}</a>
+                                                </span>
+                                            </p>
                                         </span>
                                         <span class="address-{{$key}}">
-                                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&emsp;
+                                            <p>
+                                                <span class="pull-left fa-icon">
+                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                </span>
                                             @php
                                                 $latitude = 0;
                                                 $longitude = 0;
@@ -86,7 +124,9 @@
                                                 }
                                                 $urlMap = 'http://maps.google.com/maps?q=' . $latitude . ',' . $longitude;
                                             @endphp
-                                            <a href="{{$urlMap}}" target="_blank">{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</a>
+                                            <span class="content-type">
+                                                <a href="{{$urlMap}}" target="_blank" class="pull-left">{!! !empty($item['contacts']['address']) ? $item['contacts']['address'] : '' !!}</a>
+                                            </span>
                                             </p>
                                         </span>
                                         <!-- <a href="#" class="btn-detail-card btn btn-info pull-right" data-order="{{$key}}"><i class="fa fa-info" aria-hidden="true"></i>&emsp;Detail</a> -->
@@ -96,13 +136,72 @@
                             <div role="tabpanel" class="tab-pane" id="time-{{$key}}">
                                 <div class="time-detail">
                                     <span class="update-date-{{$key}}">
-                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>&emsp;{!! !empty($item['update_date']) ? $item['update_date'] : '' !!}</p>
+                                        <p>
+                                            <span class="pull-left fa-icon">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="content-type">{!! !empty($item['update_date']) ? $item['update_date'] : '' !!}</span>
+                                        </p>
                                     </span>
                                     <span class="business-hour-{{$key}}">
-                                        <p><i class="fa fa-calendar" aria-hidden="true"></i>&emsp;{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</p>
+                                        @php
+                                            $resultContent = StringHelper::subContentString(!empty($item['business_hour']) ? $item['business_hour'] : '', 110);
+                                            $isSub = false;
+                                            if(!empty($resultContent['sub'])) {
+                                                $isSub = true;
+                                            }
+                                        @endphp
+                                        @if($isSub)
+                                        <p>
+                                            <span class="pull-left fa-icon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="fisrt content-type">{!! $resultContent['sub'] !!}
+                                                <a href="#" class="see-more" data-item="business-hour-{{$key}}">View more</a>
+                                            </span>
+                                            <span class="second content-type display-none">{!! $resultContent['content'] !!}<a href="#" class="see-less" data-item="business-hour-{{$key}}"> View less</a></span>
+                                        </p>
+                                        @else
+                                            @if(!empty($item['business_hour']))
+                                            <p>
+                                                <span class="pull-left fa-icon">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="content-type">{!! !empty($item['business_hour']) ? $item['business_hour'] : '' !!}</span>
+                                            </p>
+                                            @endif
+                                        @endif
                                     </span>
                                     <span class="holiday-{{$key}}">
-                                        <p><i class="fa fa-sign-in" aria-hidden="true"></i>&emsp;{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</p>
+                                        @php
+                                            $resultHoliday = StringHelper::subContentString(!empty($item['holiday']) ? $item['holiday'] : '', 110);
+                                            $isSub = false;
+                                            if(!empty($resultHoliday['sub'])) {
+                                                $isSub = true;
+                                            }
+                                        @endphp
+                                        @if($isSub)
+                                        <p>
+                                            <span class="pull-left fa-icon">
+                                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="fisrt content-type">{{strlen($resultHoliday['sub'])}} {!! $resultHoliday['sub'] !!}
+                                                <a href="#" class="see-more" data-item="holiday-{{$key}}">View more</a>
+                                            </span>
+                                            <span class="second content-type display-none">{{strlen($resultHoliday['content'])}} {!! $resultHoliday['content'] !!}
+                                                <a href="#" class="see-less" data-item="holiday-{{$key}}"> View less</a>
+                                            </span>
+                                        </p>
+                                        @else
+                                            @if(!empty($item['holiday']))
+                                            <p>
+                                                <span class="pull-left fa-icon">
+                                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="content-type">{!! !empty($item['holiday']) ? $item['holiday'] : '' !!}</span>
+                                            </p>
+                                            @endif
+                                        @endif
                                     </span>
                                 </div>
                             </div>
@@ -118,12 +217,11 @@
                                             $isHasPrLong = true;
                                         }
                                     @endphp
-                                    @if($isHasPrShot)
-                                        @if($isHasPrLong)
+                                    @if($isHasPrShot && $isHasPrLong)
+                                        @if(strlen($item['sales_points']['pr_short']) > strlen($item['sales_points']['pr_long']))
                                             <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
-                                            <span class="pr-long-{{$key}}"><p>{!! $item['sales_points']['pr_long'] !!}</p></span>
                                         @else
-                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_short'] !!}</p></span>
+                                            <span class="pr-short-{{$key}}"><p>{!! $item['sales_points']['pr_long'] !!}</p></span>
                                         @endif
                                     @endif
                                 </div>
