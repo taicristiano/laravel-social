@@ -6,7 +6,7 @@ class StringHelper
 {
 	public static function getLangOfUser($user, $provider)
 	{
-		$lang = 'en';
+		$lang = null;
         if (!empty($user->user['lang'])) {
             $lang = $user->user['lang'];
         } elseif(!empty($user->user['language'])) {
@@ -82,19 +82,26 @@ class StringHelper
 
 	/**
 	 * format string language
-	 * @param  string $lang
+	 * @param  array $user
+	 * @param  string $provider
+	 * @param  string $langSession
 	 * @return string
 	 */
-	public static function formatStringLanguage($user, $provider)
+	public static function formatStringLanguage($user, $provider, $langSession)
 	{
 		$lang = self::getLangOfUser($user, $provider);
 		$lang = self::formatStringJapanLanguage($lang);
 		$lang = self::formatStringChinaOldLanguage($lang);
 		$lang = self::formatStringChinaNewLanguage($lang);
 		$lang = self::formatStringKoreaLanguage($lang);
+		
 		$arrayLang = ['en', 'ja', 'zh-cn', 'zh-tw', 'ko'];
 		if (!$lang || !in_array($lang, $arrayLang)) {
-			$lang = 'en';
+			if ($langSession) {
+				$lang = $langSession;
+			} else {
+				$lang = 'en';
+			}
 		}
 		return $lang;
 	}

@@ -60,8 +60,9 @@
     $(document).on("click",".snslogin img",function(e){
 
         if($(".snslogin").hasClass("on")){
+            var lang = $('.language').val();
             var sns = $(this).attr('class');
-            setSns(sns);
+            setSns(sns, lang);
         }
 
     });
@@ -116,8 +117,8 @@
 
     }
 
-    function setSns(account){
-        window.location.href = "./" + account;
+    function setSns(account, lang) {
+        window.location.href = "./" + account + '?lang=' + lang;
     }
 
     function countup() {
