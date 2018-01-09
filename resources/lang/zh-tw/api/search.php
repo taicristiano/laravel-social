@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'Search restaurant'        => 'Search restaurant ja',
+	'Search restaurant'        => 'Search restaurant zh tw',
 	'Freeword'                 => 'Freeword ja',
 	'English'                  => '英語',
 	'Japan'                    => '日本語',

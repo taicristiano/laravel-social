@@ -50,4 +50,9 @@ return [
 	'Common'                   => 'Common',
 	'Uptime'                   => 'Uptime',
 	'PR'                       => 'PR',
+	'Japanese manners url'     => '',
+	'Kansai culture url'       => '',
+	'Event information url'    => '',
+	'Hire a rent-a-car url'    => 'http://www.rentalcars.com/en',
+	'Travel / Insurance'       => '',
 ];

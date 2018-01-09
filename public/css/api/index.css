@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
+    background-image: url(../../images/background.jpg) !important;
 }
 .content {
     margin-top: 35px;
@@ -85,10 +86,7 @@ body {
 .input-group-addon {
     cursor: pointer;
 }
-.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-    position: relative;
-    background-image: url(../../images/background.jpg) !important;
-}
+
 #searching .progress {
 	height: 15px;
 }

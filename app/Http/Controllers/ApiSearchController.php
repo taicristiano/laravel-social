@@ -73,7 +73,6 @@ class ApiSearchController extends Controller
         $client            = new \GuzzleHttp\Client();
         $format            = "json";
         $url               = 'https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/';
-        $param             = '?format=json&keyid=7c73b0efb220a06cb45056d67c471826';
         $param             = '?format=json&keyid=81ba6f93a9a519e396968467395a79aa';
         foreach ($data as $key => $value) {
             $param .= '&' . $key . '=' . $value;

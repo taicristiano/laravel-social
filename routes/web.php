@@ -18,7 +18,7 @@ Route::get('/login', function () {
 // Auth::routes();
 
 Route::get('/terms', 'HomeController@terms')->name('terms');
-Route::get('{lang?}', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('{lang?}', 'HomeController@index')->name('home');
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider')->name('redirect-provider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback')->name('handle-provider');
