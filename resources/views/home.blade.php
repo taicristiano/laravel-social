@@ -295,7 +295,11 @@
         </div>
         <div class="wrap">
             <hr>
-            <div id="shop_result">位置情報の利用が許可されていません</div>
+            <div class="en @if($lang == 'en') on @endif item-permission" >Permission to use location information is not permitted</div>
+            <div class="zh-cn @if($lang == 'zh-cn') on @endif item-permission">不允许使用位置信息</div>
+            <div class="zh-tw @if($lang == 'zh-tw') on @endif item-permission">不允許使用位置信息</div>
+            <div class="ko @if($lang == 'ko') on @endif item-permission">위치 정보의 이용이 허용되지 않습니다</div>
+            <div class="ja @if($lang == 'ja') on @endif item-permission">位置情報の利用が許可されていません</div>
         </div>
         <div class="mat">
             <!--メッセージ等-->

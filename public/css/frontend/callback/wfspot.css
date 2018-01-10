@@ -277,7 +277,8 @@ header select {
     margin: 0;
     padding: 0;
 }
-.menu ul li {
+.menu ul li,
+.item-permission {
     margin: 2%;
 }
 .menu ul li a {
@@ -303,7 +304,8 @@ header select {
     }
 }
 @media all and (max-width: 640px) {
-    .menu ul {
+    .menu ul,
+    .item-permission {
         width: 90%;
         margin: 0 auto;
     }
