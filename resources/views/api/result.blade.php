@@ -157,9 +157,9 @@ use App\Library\StringHelper;
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                             </span>
                                             <span class="fisrt content-type">{!! $resultContent['sub'] !!}
-                                                <a href="#" class="see-more" data-item="business-hour-{{$key}}">View more</a>
+                                                <a href="#" class="see-more" data-item="business-hour-{{$key}}">@lang('api/search.View more')</a>
                                             </span>
-                                            <span class="second content-type display-none">{!! $resultContent['content'] !!}<a href="#" class="see-less" data-item="business-hour-{{$key}}"> View less</a></span>
+                                            <span class="second content-type display-none">{!! $resultContent['content'] !!}<a href="#" class="see-less" data-item="business-hour-{{$key}}"> @lang('api/search.View less')</a></span>
                                         </p>
                                         @else
                                             @if(!empty($item['business_hour']))
@@ -186,10 +186,10 @@ use App\Library\StringHelper;
                                                 <i class="fa fa-sign-in" aria-hidden="true"></i>
                                             </span>
                                             <span class="fisrt content-type">{{strlen($resultHoliday['sub'])}} {!! $resultHoliday['sub'] !!}
-                                                <a href="#" class="see-more" data-item="holiday-{{$key}}">View more</a>
+                                                <a href="#" class="see-more" data-item="holiday-{{$key}}">@lang('api/search.View more')</a>
                                             </span>
                                             <span class="second content-type display-none">{{strlen($resultHoliday['content'])}} {!! $resultHoliday['content'] !!}
-                                                <a href="#" class="see-less" data-item="holiday-{{$key}}"> View less</a>
+                                                <a href="#" class="see-less" data-item="holiday-{{$key}}"> @lang('api/search.View less')</a>
                                             </span>
                                         </p>
                                         @else

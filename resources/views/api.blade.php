@@ -37,15 +37,15 @@
                                     <select class="form-control" name="lang" id="select-lang">
                                         <option value="en" @if($lang == 'en') selected @endif>@lang('api/search.English')</option>
                                         <option value="ja" @if($lang == 'ja') selected @endif>@lang('api/search.Japan')</option>
-                                        <option value="zh_cn" @if($lang == 'zh_cn') selected @endif>@lang('api/search.China old')</option>
-                                        <option value="zh_tw" @if($lang == 'zh_tw') selected @endif>@lang('api/search.China new')</option>
+                                        <option value="zh-cn" @if($lang == 'zh-cn') selected @endif>@lang('api/search.China old')</option>
+                                        <option value="zh-tw" @if($lang == 'zh-tw') selected @endif>@lang('api/search.China new')</option>
                                         <option value="ko" @if($lang == 'ko') selected @endif>@lang('api/search.Korea')</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row margin-bottom-0">
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Input coordinates mode')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Input coordinates mode')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
                                         @php
                                             $coordinatesMode = 1;
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Range')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Range')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-ipad">
                                         @php
                                             $range = 500;
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Freeword condition')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Freeword condition')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-desktop">
                                         @php
                                             $freewordCondition = 1;
@@ -96,7 +96,7 @@
                             {{-- </div> --}}
                             {{-- <div class="form-group row"> --}}
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Cordinates mode')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Cordinates mode')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-ipad">
                                         @php
                                             $cordinatesMode = 1;
@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Hit per page')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Hit per page')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0">
                                         @php
                                             $hitPerPage = 10;
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style=" min-height: 55px">
-                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-top: 7px">@lang('api/search.Sort')</label>
+                                    <label for="exampleInputPassword1" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 label-custom">@lang('api/search.Sort')</label>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-0 padding-desktop padding-ipad">
                                         @php
                                             $sort = 1;
@@ -421,7 +421,6 @@
         var lang = $(this).val();
         var urlCurrent = window.location.href; 
         url = urlCurrent.replace(langCurrent, lang);
-        // url = urlSearchBase + '/' + lang;
         var stringReplace = 'lang=' + langCurrent;
         url = url.replace(stringReplace, 'lang=' + lang);
         window.location.href = url;

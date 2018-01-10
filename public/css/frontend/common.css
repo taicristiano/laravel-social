@@ -376,3 +376,15 @@ header select {
     }
 }
 /*# sourceMappingURL=common.css.map */
+
+a.en,
+a.zh-cn,
+a.ko,
+a.ja,
+a.zh-tw {
+    display: none !important;
+}
+
+a.on {
+    display: block !important;
+}

@@ -64,7 +64,6 @@ class ApiSearchController extends Controller
         unset($data['cordinates_mode']);
         // unset($data['input_coordinates_mode']);
         // unset($data['freeword_condition']);
-        // https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/format=json&keyid=81ba6f93a9a519e396968467395a79aa&format=json&keyid=81ba6f93a9a519e396968467395a79aa&freeword=&lang=en&input_coordinates_mode=1&freeword_condition=1&hit_per_page=10&sort=1&longitude=139.75992&latitude=35.673092
         if(!empty($data['test_lat'])) {
             $data['latitude']  = '35.673092';
             $data['longitude'] = '139.75992';
@@ -74,13 +73,15 @@ class ApiSearchController extends Controller
         $format            = "json";
         $url               = 'https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/';
         $param             = '?format=json&keyid=81ba6f93a9a519e396968467395a79aa';
+        $urlSearch         = route('api', ['lang' => $data['lang']]);
+        $lang              = $data['lang'];
         foreach ($data as $key => $value) {
             $param .= '&' . $key . '=' . $value;
         }
-        $url           .=  $param;
+        $url           .=  $param . '&lang=' . str_replace('-', '_', $lang);
         $response      = $client->request('GET', $url);
         $result        = json_decode($response->getBody()->getContents(), true);
-        $result['url'] = route('api', ['lang' => $data['lang']]) . $param;
+        $result['url'] = $urlSearch . $param . '&lang=' . $lang;
         return $result;
     }
 }
