@@ -103,6 +103,9 @@ class StringHelper
 				$lang = 'en';
 			}
 		}
+		if(!$lang) {
+			$lang = 'en';
+		}
 		return $lang;
 	}
 

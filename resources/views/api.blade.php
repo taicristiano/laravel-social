@@ -13,7 +13,7 @@
                 <!-- general form elements -->
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">@lang('api/search.Search restaurant')</h3>
+                    <h3 class="box-titles title-search">@lang('api/search.Search restaurant')</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->

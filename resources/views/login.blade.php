@@ -40,12 +40,12 @@
 		<div class="logo animetion1"><img src="{{asset('images/logologo.png')}}" alt="ロゴ"><span class="animetion1_1">Welcome Spot<span></div>
 		<div class="animation2">
 			<section class="contract">
-				<span class="en">英語の説明</span>
-				<span class="zh-cn">繁体字の説明</span>
-				<span class="zh-tw">簡体字の説明</span>
-				<span class="ko">韓国語の説明</span>
+				<span class="en">Please read the terms of use of this site.</span>
+				<span class="zh-cn">请阅读本网站的使用条款。</span>
+				<span class="zh-tw">請閱讀本網站的使用條款。</span>
+				<span class="ko">본 사이트의 이용 약관을 반드시 읽어 보시기 바랍니다.</span>
 				<span class="ja">当サイトのご利用規約を必ずお読みください。</span>
-	<div id="report"></div>
+				<div id="report"></div>
 
 				<div class="agree">
 					<div>

@@ -325,7 +325,7 @@ header select {
 @media all and (min-width: 639px) {
     .wrap {
         position: relative;
-        width: 640px;
+        width: 660px;
         margin: 0 auto;
     }
 }

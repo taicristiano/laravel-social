@@ -30,8 +30,10 @@ class AuthController extends Controller
             Session::forget('lang');
         }
         if ($request->has('lang')) {
-            $lang  = $request->query('lang');
-            Session::push('lang', $lang);
+            $lang = $request->query('lang');
+            if($lang) {
+                Session::push('lang', $lang);
+            }
         }
         return Socialite::driver($provider)->redirect();
     }
@@ -53,9 +55,11 @@ class AuthController extends Controller
                 $langSession = Session::get('lang')[0];
                 Session::forget('lang');
             }
+            Log::info($langSession);
             $lang = StringHelper::formatStringLanguage($user, $provider, $langSession);
 
             $authUser = User::findOrCreateUser($user, $lang, $request->ip(), $provider);
+            Log::info($lang);
 
             Auth::login($authUser, true);
             return redirect()->route('home', ['lang' => $lang]);

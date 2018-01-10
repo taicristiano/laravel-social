@@ -47,6 +47,9 @@
         } else{
             setLang("");
         }
+        if ($('.menu').length) {
+            setHeightItem();
+        }
     });
 
     $(document).on("change",".contract input[type=checkbox]",function(e){

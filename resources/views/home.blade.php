@@ -319,7 +319,27 @@
             </div>
         </div>
         <script>
-            urlCallback = "{{ route('home', ['lang' => ''])}}";
+            var urlCallback = "{{ route('home', ['lang' => ''])}}";
+            $(function() {
+                setHeightItem();
+            })
+
+            function setHeightItem()
+            {
+                var heightMax = 0;
+                $(".menu ul li a.on").each(function(){
+                    var height = $(this).find('span.on').height();
+                    if (height > heightMax) {
+                        heightMax = height;
+                    }
+                });
+                $(".menu ul li a.on").each(function(){
+                    $(this).find('span.on').height(heightMax);
+                });
+            }
+            $(window).resize(function(){
+                setHeightItem();
+            });
         </script>
     </body>
 </html>

@@ -2,7 +2,7 @@
 
 return [
 	'Search restaurant'        => '搜索餐廳',
-	'Freeword'                 => 'Freeword',
+	'Freeword'                 => '免费的单词搜索',
 	'English'                  => '英语',
 	'Japan'                    => '日本語',
 	'China old'                => '简体中文',
