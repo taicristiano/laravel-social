@@ -96,16 +96,14 @@ class StringHelper
 		$lang = self::formatStringKoreaLanguage($lang);
 
 		$arrayLang = ['en', 'ja', 'zh-cn', 'zh-tw', 'ko'];
-		if (!$lang || !in_array($lang, $arrayLang)) {
-			if ($langSession) {
+		if (!$lang || !in_array($lang, $arrayLang) || $lang == 'null') {
+			if (in_array($langSession, $arrayLang)) {
 				$lang = $langSession;
 			} else {
 				$lang = 'en';
 			}
 		}
-		if(!$lang) {
-			$lang = 'en';
-		}
+
 		return $lang;
 	}
 

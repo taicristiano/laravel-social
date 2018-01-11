@@ -38,7 +38,7 @@
                 <section class="menu">
                     <ul>
                         <li>
-                            <a href="http://www.metro.tokyo.jp/ENGLISH/index.htm" class="en @if($lang == 'en') on @endif" target="_blank">
+                            <a href="https://wow-j.com/en/" class="en @if($lang == 'en') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_1.png')}}">
                                 <span class="en @if($lang == 'en') on @endif">Japanese manners</span>
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">日式禮服</span>
@@ -46,7 +46,7 @@
                                 <span class="ko @if($lang == 'ko') on @endif">일본의 예절</span>
                                 <span class="ja @if($lang == 'ja') on @endif">日本の作法</span>
                             </a>
-                            <a href="http://www.metro.tokyo.jp/CHINESE/index.htm" class="zh-cn @if($lang == 'zh-cn') on @endif" target="_blank">
+                            <a href="https://wow-j.com/cn/" class="zh-cn @if($lang == 'zh-cn') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_1.png')}}">
                                 <span class="en @if($lang == 'en') on @endif">Japanese manners</span>
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">日式禮服</span>
@@ -54,7 +54,7 @@
                                 <span class="ko @if($lang == 'ko') on @endif">일본의 예절</span>
                                 <span class="ja @if($lang == 'ja') on @endif">日本の作法</span>
                             </a>
-                            <a href="http://www.metro.tokyo.jp/CHINESE/index.htm" class="zh-tw @if($lang == 'zh-tw') on @endif" target="_blank">
+                            <a href="https://wow-j.com/tw/" class="zh-tw @if($lang == 'zh-tw') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_1.png')}}">
                                 <span class="en @if($lang == 'en') on @endif">Japanese manners</span>
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">日式禮服</span>
@@ -62,7 +62,7 @@
                                 <span class="ko @if($lang == 'ko') on @endif">일본의 예절</span>
                                 <span class="ja @if($lang == 'ja') on @endif">日本の作法</span>
                             </a>
-                            <a href="http://www.metro.tokyo.jp/KOREAN/index.htm" class="ko @if($lang == 'ko') on @endif" target="_blank">
+                            <a href="https://wow-j.com/kr/" class="ko @if($lang == 'ko') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_1.png')}}">
                                 <span class="en @if($lang == 'en') on @endif">Japanese manners</span>
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">日式禮服</span>
@@ -70,7 +70,7 @@
                                 <span class="ko @if($lang == 'ko') on @endif">일본의 예절</span>
                                 <span class="ja @if($lang == 'ja') on @endif">日本の作法</span>
                             </a>
-                            <a href="http://www.metro.tokyo.jp/index.html" class="ja @if($lang == 'ja') on @endif" target="_blank">
+                            <a href="https://wow-j.com/jp/" class="ja @if($lang == 'ja') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_1.png')}}">
                                 <span class="en @if($lang == 'en') on @endif">Japanese manners</span>
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">日式禮服</span>
@@ -212,7 +212,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                                 <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
-                                <span class="ja @if($lang == 'ja') on @endif">旅行・保険</span>
+                                <span class="ja @if($lang == 'ja') on @endif">病院 旅行・保険</span>
                             </a>
                             <a href="http://www.jnto.go.jp/emergency/chs/mi_guide.html" class="zh-cn @if($lang == 'zh-cn') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_5.png')}}">
@@ -220,7 +220,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                                 <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
-                                <span class="ja @if($lang == 'ja') on @endif">旅行・保険</span>
+                                <span class="ja @if($lang == 'ja') on @endif">病院 旅行・保険</span>
                             </a>
                             <a href="http://www.jnto.go.jp/emergency/chc/mi_guide.html" class="zh-tw @if($lang == 'zh-tw') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_5.png')}}">
@@ -228,7 +228,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                                 <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
-                                <span class="ja @if($lang == 'ja') on @endif">旅行・保険</span>
+                                <span class="ja @if($lang == 'ja') on @endif">病院 旅行・保険</span>
                             </a>
                             <a href="http://www.jnto.go.jp/emergency/kor/mi_guide.html" class="ko @if($lang == 'ko') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_5.png')}}">
@@ -236,7 +236,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                                 <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
-                                <span class="ja @if($lang == 'ja') on @endif">旅行・保険</span>
+                                <span class="ja @if($lang == 'ja') on @endif">病院 旅行・保険</span>
                             </a>
                             <a href="http://www.jnto.go.jp/emergency/jpn/mi_guide.html" class="ja @if($lang == 'ja') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_5.png')}}">
@@ -244,7 +244,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">旅遊·保險</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">旅游·保险</span>
                                 <span class="ko @if($lang == 'ko') on @endif">여행 보험</span>
-                                <span class="ja @if($lang == 'ja') on @endif">旅行・保険</span>
+                                <span class="ja @if($lang == 'ja') on @endif">病院 旅行・保険</span>
                             </a>
                         </li>
                         <li>
@@ -254,7 +254,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">咕嘟妈咪</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">咕嘟媽咪</span>
                                 <span class="ko @if($lang == 'ko') on @endif">구루 나비</span>
-                                <span class="ja @if($lang == 'ja') on @endif">ぐるなび</span>
+                                <span class="ja @if($lang == 'ja') on @endif">食事</span>
                             </a>
                             <a href="{{ route('api', ['lang' => 'zh-cn'])}}" class="zh-cn @if($lang == 'zh-cn') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_6.png')}}">
@@ -262,7 +262,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">咕嘟妈咪</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">咕嘟媽咪</span>
                                 <span class="ko @if($lang == 'ko') on @endif">구루 나비</span>
-                                <span class="ja @if($lang == 'ja') on @endif">ぐるなび</span>
+                                <span class="ja @if($lang == 'ja') on @endif">食事</span>
                             </a>
                             <a href="{{ route('api', ['lang' => 'zh-tw'])}}" class="zh-tw @if($lang == 'zh-tw') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_6.png')}}">
@@ -270,7 +270,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">咕嘟妈咪</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">咕嘟媽咪</span>
                                 <span class="ko @if($lang == 'ko') on @endif">구루 나비</span>
-                                <span class="ja @if($lang == 'ja') on @endif">ぐるなび</span>
+                                <span class="ja @if($lang == 'ja') on @endif">食事</span>
                             </a>
                             <a href="{{ route('api', ['lang' => 'ko'])}}" class="ko @if($lang == 'ko') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_6.png')}}">
@@ -278,7 +278,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">咕嘟妈咪</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">咕嘟媽咪</span>
                                 <span class="ko @if($lang == 'ko') on @endif">구루 나비</span>
-                                <span class="ja @if($lang == 'ja') on @endif">ぐるなび</span>
+                                <span class="ja @if($lang == 'ja') on @endif">食事</span>
                             </a>
                             <a href="{{ route('api', ['lang' => 'ja'])}}" class="ja @if($lang == 'ja') on @endif" target="_blank">
                                 <img src="{{asset('images/btn_6.png')}}">
@@ -286,7 +286,7 @@
                                 <span class="zh-cn @if($lang == 'zh-cn') on @endif">咕嘟妈咪</span>
                                 <span class="zh-tw @if($lang == 'zh-tw') on @endif">咕嘟媽咪</span>
                                 <span class="ko @if($lang == 'ko') on @endif">구루 나비</span>
-                                <span class="ja @if($lang == 'ja') on @endif">ぐるなび</span>
+                                <span class="ja @if($lang == 'ja') on @endif">食事</span>
                             </a>
                         </li>
                     </ul>
